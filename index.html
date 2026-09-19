@@ -9,9 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #1a1a18;
+      --ink: #0d0d0b;
       --paper: #f5f2eb;
-      --muted: #7a7568;
+      --muted: #5a5650;
       --accent: #2d5a3d;
       --accent-light: #e8f0eb;
       --rule: #ddd8cc;
@@ -21,7 +21,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -33,488 +32,229 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(245, 242, 235, 0.92);
+      background: rgba(245, 242, 235, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--rule);
       padding: 0 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 52px;
+      height: 56px;
     }
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 17px;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.75rem;
-      list-style: none;
-    }
+    .nav-logo { font-family: var(--serif); font-size: 18px; color: var(--ink); letter-spacing: -0.01em; font-weight: 600; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      transition: color 0.2s;
+      font-size: 12px; font-weight: 600; color: var(--muted);
+      text-decoration: none; letter-spacing: 0.05em;
+      text-transform: uppercase; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--accent); }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 5rem 2rem 3.5rem;
+      max-width: 820px; margin: 0 auto;
+      padding: 6rem 2rem 4rem;
       border-bottom: 1px solid var(--rule);
     }
     .hero-eyebrow {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
     }
     .hero h1 {
       font-family: var(--serif);
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      margin-bottom: 1.25rem;
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      line-height: 1.05; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 1.5rem;
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
     .hero-bio {
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 580px;
-      line-height: 1.75;
-      margin-bottom: 2rem;
+      font-size: 16px; color: var(--muted);
+      max-width: 600px; line-height: 1.8; margin-bottom: 2.5rem;
     }
-    .hero-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 2rem;
-    }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2.5rem; }
     .pill {
-      font-size: 12px;
-      font-weight: 500;
-      padding: 5px 12px;
-      border-radius: 100px;
-      border: 1px solid var(--rule);
-      color: var(--muted);
-      background: var(--card);
+      font-size: 12px; font-weight: 500; padding: 6px 14px;
+      border-radius: 100px; border: 1px solid var(--rule);
+      color: var(--muted); background: var(--card);
     }
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      padding: 9px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--sans); font-size: 13px; font-weight: 600;
+      padding: 11px 22px; border-radius: 6px;
+      text-decoration: none; transition: all 0.25s;
+      cursor: pointer; border: none; letter-spacing: 0.02em;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-    .btn-primary:hover { background: #224830; }
-    .btn-secondary {
-      background: var(--card);
-      color: var(--ink);
-      border: 1px solid var(--rule);
-    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #224830; transform: translateY(-2px); }
+    .btn-secondary { background: var(--card); color: var(--ink); border: 1.5px solid var(--rule); }
     .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── LAYOUT ── */
-    .container {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    section {
-      padding: 3.5rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
+    /* LAYOUT */
+    .container { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 4.5rem 0; border-bottom: 1px solid var(--rule); }
     section:last-child { border-bottom: none; }
 
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: 1.6rem;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-    }
-    .section-count {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
+    .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 2.5rem; }
+    .section-title { font-family: var(--serif); font-size: 2rem; letter-spacing: -0.02em; color: var(--ink); font-weight: 600; }
+    .section-subtitle { font-size: 14px; color: var(--muted); line-height: 1.7; font-weight: 400; }
 
-    /* ── PROJECTS ── */
+    /* PROJECTS INTRO */
+    .projects-intro {
+      background: var(--accent-light); padding: 2rem 2rem;
+      border-radius: 10px; margin-bottom: 2.5rem;
+      border-left: 4px solid var(--accent);
+    }
+    .projects-intro-title { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); margin-bottom: 0.8rem; }
+    .projects-intro-desc { font-size: 15px; color: var(--muted); line-height: 1.75; }
+
+    /* PROJECTS */
     .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      overflow: hidden;
-      background: var(--rule);
+      display: flex; flex-direction: column;
+      gap: 1.5px; border: 1px solid var(--rule);
+      border-radius: 10px; overflow: hidden; background: var(--rule);
     }
-    .project-card {
-      background: var(--card);
-      padding: 1.5rem;
-      transition: background 0.15s;
-    }
+    .project-card { background: var(--card); padding: 2rem; transition: all 0.15s; }
     .project-card:hover { background: #fafaf8; }
     .project-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.6rem;
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem;
     }
-    .project-name {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      color: var(--ink);
-      line-height: 1.3;
-    }
+    .project-name { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); line-height: 1.3; font-weight: 600; }
     .project-lang {
-      font-size: 11px;
-      font-weight: 500;
-      padding: 3px 9px;
-      border-radius: 4px;
-      background: var(--accent-light);
-      color: var(--accent);
-      white-space: nowrap;
-      flex-shrink: 0;
+      font-size: 11px; font-weight: 600; padding: 5px 11px;
+      border-radius: 4px; background: var(--accent-light);
+      color: var(--accent); white-space: nowrap; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.03em;
     }
-    .project-desc {
-      font-size: 13.5px;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 1rem;
+    .project-year { font-size: 12px; color: var(--muted); margin-bottom: 0.8rem; }
+    .project-desc { font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 1.2rem; }
+    .project-details {
+      background: #fafaf8; padding: 1.25rem; border-radius: 6px;
+      margin-bottom: 1.2rem; border-left: 3px solid var(--accent-light);
+      font-size: 13.5px; color: var(--muted); line-height: 1.7;
     }
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-    }
-    .tag {
-      font-size: 11px;
-      padding: 3px 9px;
-      border-radius: 4px;
-      border: 1px solid var(--rule);
-      color: var(--muted);
-    }
-    .tag-soon {
-      font-size: 11px;
-      padding: 3px 9px;
-      border-radius: 4px;
-      background: #fff8e6;
-      color: #92600a;
-      border: 1px solid #f0d89a;
-    }
-    .tag-wip {
-      font-size: 11px;
-      padding: 3px 9px;
-      border-radius: 4px;
-      background: #eef3fe;
-      color: #2d4fd4;
-      border: 1px solid #c0ccf8;
-    }
+    .project-details strong { color: var(--ink); font-weight: 600; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .tag { font-size: 11px; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--rule); color: var(--muted); font-weight: 500; }
+    .tag-wip { font-size: 11px; padding: 4px 10px; border-radius: 4px; background: #eef3fe; color: #2d4fd4; border: 1px solid #c0ccf8; font-weight: 500; }
+    .tag-complete { font-size: 11px; padding: 4px 10px; border-radius: 4px; background: #e6f7f0; color: #0d5a47; border: 1px solid #99d9c8; font-weight: 500; }
+    .project-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1rem; }
     .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--accent);
-      text-decoration: none;
-      margin-top: 0.75rem;
+      font-size: 12px; padding: 6px 12px; border-radius: 4px;
+      background: var(--accent-light); color: var(--accent);
+      text-decoration: none; font-weight: 600;
+      transition: all 0.2s;
     }
-    .project-link:hover { text-decoration: underline; }
-    .project-dashed { background: #fafaf8; }
+    .project-link:hover { background: var(--accent); color: #fff; }
 
-    /* ── SKILLS ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-      gap: 10px;
-    }
-    .skill-card {
-      background: var(--card);
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      padding: 1rem 1.1rem;
-    }
-    .skill-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-    }
-    .skill-name {
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .skill-level {
-      font-size: 11px;
-      color: var(--muted);
-    }
-    .skill-bar {
-      height: 3px;
-      background: var(--rule);
-      border-radius: 2px;
-    }
-    .skill-fill {
-      height: 100%;
-      border-radius: 2px;
-      background: var(--accent);
-    }
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .skill-card { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 1.25rem; }
+    .skill-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .skill-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .skill-level { font-size: 11px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+    .skill-bar { height: 3px; background: var(--rule); border-radius: 2px; }
+    .skill-fill { height: 100%; border-radius: 2px; background: var(--accent); }
 
-    /* ── DOMAIN SKILLS ── */
-    .domain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 10px;
-      margin-top: 1.25rem;
-    }
-    .domain-card {
-      background: var(--card);
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      padding: 1rem 1.1rem;
-    }
-    .domain-label {
-      font-size: 11px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-    .domain-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
+    .domain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 1.5rem; }
+    .domain-card { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 1.25rem; }
+    .domain-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 6px; }
+    .domain-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
-    /* ── EDUCATION ── */
-    .edu-list { display: flex; flex-direction: column; gap: 0; }
+    /* EDUCATION */
+    .edu-list { display: flex; flex-direction: column; }
     .edu-item {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 1.25rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--rule);
-      align-items: start;
+      display: grid; grid-template-columns: 120px 1fr;
+      gap: 1.75rem; padding: 1.5rem 0;
+      border-bottom: 1px solid var(--rule); align-items: start;
     }
     .edu-item:last-child { border-bottom: none; }
-    .edu-year {
-      font-size: 12px;
-      color: var(--muted);
-      padding-top: 3px;
-      font-variant-numeric: tabular-nums;
-    }
-    .edu-degree {
-      font-family: var(--serif);
-      font-size: 1rem;
-      color: var(--ink);
-      line-height: 1.3;
-      margin-bottom: 2px;
-    }
-    .edu-inst {
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .edu-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--accent);
-      margin-top: 4px;
-    }
-    .dot-live {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
+    .edu-year { font-size: 12px; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; font-weight: 600; }
+    .edu-degree { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); line-height: 1.3; margin-bottom: 3px; font-weight: 600; }
+    .edu-inst { font-size: 13.5px; color: var(--muted); font-weight: 500; }
+    .edu-detail { font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+    .edu-status { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--accent); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.02em; }
+    .dot-live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-    /* ── EXPERIENCE ── */
+    /* EXPERIENCE */
     .exp-list { display: flex; flex-direction: column; }
-    .exp-item {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 1.25rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
+    .exp-item { display: grid; grid-template-columns: 120px 1fr; gap: 1.75rem; padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
     .exp-item:last-child { border-bottom: none; }
-    .exp-dates {
-      font-size: 12px;
-      color: var(--muted);
-      padding-top: 3px;
-    }
-    .exp-role {
-      font-family: var(--serif);
-      font-size: 1rem;
-      color: var(--ink);
-      margin-bottom: 2px;
-    }
-    .exp-org {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .exp-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
+    .exp-dates { font-size: 12px; color: var(--muted); padding-top: 3px; font-weight: 600; }
+    .exp-role { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); margin-bottom: 3px; font-weight: 600; }
+    .exp-org { font-size: 13.5px; color: var(--muted); margin-bottom: 8px; font-weight: 500; }
+    .exp-desc { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
 
-    /* ── LANGUAGES ── */
-    .lang-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    /* LANGUAGES */
+    .lang-row { display: flex; gap: 12px; flex-wrap: wrap; }
     .lang-card {
-      background: var(--card);
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      padding: 0.85rem 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      background: var(--card); border: 1px solid var(--rule);
+      border-radius: 8px; padding: 1rem 1.5rem;
+      display: flex; align-items: center; gap: 12px;
     }
-    .lang-flag { font-size: 20px; }
-    .lang-name {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .lang-level-text {
-      font-size: 12px;
-      color: var(--muted);
-    }
+    .lang-flag { font-size: 1.5rem; }
+    .lang-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .lang-level-text { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
+    .contact-intro { font-size: 15.5px; color: var(--muted); margin-bottom: 2rem; line-height: 1.8; }
     .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
     }
     .contact-item {
-      background: var(--card);
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--ink);
-      transition: border-color 0.2s;
+      display: flex; gap: 14px; padding: 1.25rem;
+      background: var(--card); border: 1px solid var(--rule);
+      border-radius: 8px; text-decoration: none;
+      transition: all 0.2s;
     }
-    .contact-item:hover { border-color: var(--accent); }
+    .contact-item:hover { border-color: var(--accent); background: #fafaf8; }
     .contact-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--accent-light);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      flex-shrink: 0;
+      font-size: 1.5rem; width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); flex-shrink: 0;
     }
-    .contact-label {
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .contact-value {
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--ink);
-    }
+    .contact-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 4px; }
+    .contact-value { font-size: 14px; color: var(--ink); font-weight: 600; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
-      text-align: center;
-      padding: 2.5rem;
-      font-size: 12.5px;
-      color: var(--muted);
-      border-top: 1px solid var(--rule);
+      background: var(--paper); border-top: 1px solid var(--rule);
+      padding: 2.5rem; text-align: center;
+      font-size: 12px; color: var(--muted); letter-spacing: 0.05em;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .hero { padding: 3rem 1.25rem 2.5rem; }
-      .container { padding: 0 1.25rem; }
-      nav { padding: 0 1.25rem; }
-      .nav-links { gap: 1.1rem; }
-      .nav-links a { font-size: 12px; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .edu-item, .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+    /* FADE IN ANIMATION */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease-out forwards; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    section:nth-child(2) .fade-in { animation-delay: 0.1s; }
+    section:nth-child(3) .fade-in { animation-delay: 0.15s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .nav-links { gap: 1.25rem; }
+      .hero { padding: 3.5rem 1.5rem 2.5rem; }
+      .section-header { flex-direction: column; gap: 0.5rem; }
+      .section-title { font-size: 1.6rem; }
+      .edu-item, .exp-item { grid-template-columns: 1fr; }
       .edu-year, .exp-dates { font-size: 11px; }
-    }
-
-    /* ── FADE IN ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+      .project-top { flex-direction: column; gap: 0; margin-bottom: 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <span class="nav-logo">Aquila Williams</span>
+    <div class="nav-logo">Aquila Williams</div>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -523,112 +263,131 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero fade-in">
-    <p class="hero-eyebrow">Health Economist · Data Analyst · Le Mans, France</p>
-    <h1>From the lab bench<br/>to <em>health economics</em></h1>
-    <p class="hero-bio">
-      MSc student in Health Economics with a background in molecular biology and scientific education. Specialised in health economic evaluation, HTA, and health data analysis. Currently seeking an alternance contract for M2 (September 2026).
-    </p>
-    <div class="hero-pills">
-      <span class="pill">Cost-effectiveness analysis</span>
-      <span class="pill">HTA &amp; Market Access</span>
-      <span class="pill">R · Python · SAS · Excel/VBA</span>
-      <span class="pill">Bayesian modelling</span>
-      <span class="pill">Caribbean health systems</span>
-    </div>
-    <div class="hero-links">
-      <a href="https://www.linkedin.com/in/aquila-williams-health-economist-3ba07bb3/" target="_blank" class="btn btn-primary">
-        ↗ LinkedIn
-      </a>
-      <a href="https://github.com/" target="_blank" class="btn btn-secondary">
-        GitHub
-      </a>
-      <a href="mailto:aquilawilliams02@gmail.com" class="btn btn-secondary">
-        Email me
-      </a>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
   <div class="container">
-    <section id="projects" class="fade-in">
-      <div class="section-header">
-        <h2 class="section-title">Projects</h2>
-        <span class="section-count">4 works</span>
+
+    <!-- HERO -->
+    <section class="hero fade-in">
+      <div class="hero-eyebrow">Health Economist</div>
+      <h1>Research & data for <em>health systems</em></h1>
+      <p class="hero-bio">
+        MSc in Health Economics (Le Mans University, 2025-2027). Specialized in HTA, market access, and health data analysis. Background in molecular biology and teaching. Seeking M2 alternance/internship (Sept 2026 onwards).
+      </p>
+      <div class="hero-pills">
+        <span class="pill">Panel Econometrics</span>
+        <span class="pill">Bayesian Inference</span>
+        <span class="pill">Health Data Mining</span>
+        <span class="pill">R / Python / SAS</span>
+        <span class="pill">HTA</span>
+      </div>
+      <div class="hero-links">
+        <a href="https://github.com/aquila3D/health-econ-portfolio" target="_blank" class="btn btn-primary">GitHub Portfolio</a>
+        <a href="mailto:aquilawilliams02@gmail.com" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- PROJECTS INTRO -->
+    <section id="projects">
+      <div class="projects-intro">
+        <div class="projects-intro-title">Research & Analysis Projects</div>
+        <div class="projects-intro-desc">
+          Three major research projects demonstrating expertise in health econometrics, Bayesian inference, and machine learning applied to real health systems data. All code is reproducible and available on GitHub.
+        </div>
       </div>
 
       <div class="projects-grid">
 
-        <!-- Project 1 -->
+        <!-- PROJECT 1: NMA -->
         <div class="project-card">
           <div class="project-top">
-            <div class="project-name">Does Spending More Mean Living Longer? Health Expenditure &amp; Life Expectancy in Caribbean Small Island States</div>
-            <span class="project-lang">R · English</span>
+            <div>
+              <div class="project-name">Network Meta-Analysis: Venous Leg Ulcer Treatment</div>
+              <div class="project-year">M1 Coursework, 2026</div>
+            </div>
+            <span class="project-lang">R + French</span>
           </div>
           <p class="project-desc">
-            A cross-sectional analysis of the relationship between health expenditure per capita and life expectancy across 15 Caribbean nations (2015–2022), using World Bank and WHO open data. Explores out-of-pocket expenditure as a barrier to access and highlights inter-island disparities relevant to health policy and resource allocation.
+            Bayesian hierarchical network meta-analysis of 15 randomized controlled trials comparing 6 treatment strategies for venous leg ulcers. Implemented random-effects models via MCMC simulation with convergence diagnostics (Gelman-Rubin, trace plots) and probabilistic ranking of treatments via SUCRA.
           </p>
+          <div class="project-details">
+            <strong>Key Results:</strong> Laser therapy shows 42.8% probability of being most effective (52% in fixed-effects model). Analysis identified moderate heterogeneity (I² = 46%) requiring random-effects specification. Full Bayesian posterior inference and sensitivity analyses included.
+          </div>
+          <div class="project-details">
+            <strong>Methods:</strong> Bayesian hierarchical modeling · MCMC simulation (WinBUGS) · Convergence diagnostics · SUCRA probabilistic rankings · Network evidence synthesis
+          </div>
           <div class="project-tags">
-            <span class="tag">Health economics</span>
-            <span class="tag">OLS regression</span>
-            <span class="tag">Caribbean</span>
-            <span class="tag">PAHO data</span>
-            <span class="tag-wip">⟳ In preparation</span>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <div class="project-top">
-            <div class="project-name">Patient Pathway Audit — Oncohematology Unit, UHWI</div>
-            <span class="project-lang">Python · Excel</span>
-          </div>
-          <p class="project-desc">
-            Internship project at the University Hospital of the West Indies (Kingston, Jamaica). Audit and modelling of care pathways in the oncohematology unit to identify bottlenecks, optimise patient flow, and reduce wait times. Hospital database analysis with strategic recommendations to medical management.
-          </p>
-          <div class="project-tags">
-            <span class="tag">Health data analysis</span>
-            <span class="tag">Hospital management</span>
-            <span class="tag">Caribbean health system</span>
-            <span class="tag-soon">↻ June 2026</span>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-          <div class="project-top">
-            <div class="project-name">Predictive Analysis of Net Cancer Survival in OECD Countries — A Decision Tree Approach</div>
-            <span class="project-lang">R · French</span>
-          </div>
-          <p class="project-desc">
-            Classification of 5-year net cancer survival rates (low / medium / high) across OECD countries using CONCORD program data (n = 2,098 observations). Models compared: CART decision tree, random forest, and multinomial logistic regression — all achieving 91.7% accuracy (κ = 0.87), with cancer type identified as the dominant predictive variable.
-          </p>
-          <div class="project-tags">
-            <span class="tag">Data mining</span>
-            <span class="tag">Decision tree (CART)</span>
-            <span class="tag">Random forest</span>
-            <span class="tag">OECD data</span>
-            <span class="tag">KDD framework</span>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card">
-          <div class="project-top">
-            <div class="project-name">Comparative Efficacy of Venous Leg Ulcer Treatments — A Bayesian Network Meta-Analysis</div>
-            <span class="project-lang">WinBUGS · R · English</span>
-          </div>
-          <p class="project-desc">
-            Bayesian network meta-analysis (NMA) of 15 randomised controlled trials comparing 6 therapeutic strategies for venous leg ulcer healing. Lu &amp; Ades random-effects model, MCMC (50,000 iterations, 3 chains), SUCRA ranking. Low-level laser therapy identified as optimal strategy (42.8% probability of ranking 1st). Concludes with a call for ICER modelling to inform HTA decisions.
-          </p>
-          <div class="project-tags">
-            <span class="tag">NMA · Bayesian</span>
-            <span class="tag">WinBUGS</span>
-            <span class="tag">HTA</span>
-            <span class="tag">SUCRA</span>
+            <span class="tag-complete">✓ Complete</span>
+            <span class="tag">Bayesian Statistics</span>
             <span class="tag">15 RCTs</span>
-            <span class="tag-soon">↻ Results pending</span>
+            <span class="tag">1,967 observations</span>
+            <span class="tag">French</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/aquila3D/health-econ-portfolio/tree/main/2_venous_ulcers_nma" class="project-link">View on GitHub</a>
+            <a href="https://github.com/aquila3D/health-econ-portfolio/raw/main/2_venous_ulcers_nma/BAKHOUM_WILLIAMS_Projet_Meta_Rapport.pdf" class="project-link">PDF Report</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Data Mining -->
+        <div class="project-card">
+          <div class="project-top">
+            <div>
+              <div class="project-name">Predictive Classification: Cancer Survival Outcomes (OECD)</div>
+              <div class="project-year">M1 Coursework, 2026</div>
+            </div>
+            <span class="project-lang">R + French</span>
+          </div>
+          <p class="project-desc">
+            Supervised machine learning classification project predicting net survival at 5 years for 1,455 cancer patients across 46 OECD countries, 2004-2014. Implemented and compared three algorithms: CART decision trees, Random Forest ensemble, and multinomial logistic regression.
+          </p>
+          <div class="project-details">
+            <strong>Key Results:</strong> Decision tree (CART) achieved 91.7% accuracy (Kappa = 0.87). Cancer type is the dominant predictor (explains ~95% of model variance). Class-specific sensitivity: Low survival 95.9%, Medium 89.8%, High survival 89.1%. Model validated via 5-fold cross-validation with stratified sampling.
+          </div>
+          <div class="project-details">
+            <strong>Methods:</strong> Supervised classification · Decision trees (CART) · Random Forest · Multinomial logistic regression · Cross-validation · Feature importance · Confusion matrices
+          </div>
+          <div class="project-tags">
+            <span class="tag-complete">✓ Complete</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">1,455 observations</span>
+            <span class="tag">46 countries</span>
+            <span class="tag">91.7% Accuracy</span>
+            <span class="tag">French</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/aquila3D/health-econ-portfolio/tree/main/3_cancer_survival_datamining" class="project-link">View on GitHub</a>
+            <a href="https://github.com/aquila3D/health-econ-portfolio/raw/main/3_cancer_survival_datamining/BAKHOUM_WILLIAMS_Projet_data_mining_rapport.pdf" class="project-link">PDF Report</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: Caribbean Panel -->
+        <div class="project-card">
+          <div class="project-top">
+            <div>
+              <div class="project-name">Health Financing & Population Outcomes: Multi-Country Panel Analysis</div>
+              <div class="project-year">Research in Progress, 2026</div>
+            </div>
+            <span class="project-lang">R</span>
+          </div>
+          <p class="project-desc">
+            Comparative econometric analysis of 31 Latin American and Caribbean countries (2015-2022) testing competing hypotheses: Does total health spending commitment (% GDP) or financing structure (out-of-pocket burden) more strongly predict population health outcomes? Panel analysis with multiple model specifications and rigorous diagnostics.
+          </p>
+          <div class="project-details">
+            <strong>Key Findings:</strong> Health expenditure as % GDP is a robust predictor across all outcomes (β = 0.94 years life expectancy, p = 0.001; β = -2.92 infant deaths per 1,000, p = 0.002). Out-of-pocket burden shows no independent effect (p > 0.15 across outcomes) once total spending is controlled. Hausman test strongly rejects random-effects model (χ² = 45.03, p &lt; 0.001), validating fixed-effects specification.
+          </div>
+          <div class="project-details">
+            <strong>Methodology:</strong> Pooled OLS with year fixed effects · Random-effects model · Fixed-effects (within estimator) · Lagged specifications for temporal dynamics · Hausman specification test · Sensitivity analyses (regional subsets, COVID exclusion) · Multicollinearity diagnostics (VIF &lt; 2.0 all variables) · Five outcome specifications
+          </div>
+          <div class="project-tags">
+            <span class="tag-wip">→ Collaborative Research</span>
+            <span class="tag">Panel Econometrics</span>
+            <span class="tag">31 countries</span>
+            <span class="tag">248 observations</span>
+            <span class="tag">100% data coverage</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/aquila3D/health-econ-portfolio/tree/main/1_caribbean_health_financing" class="project-link">View on GitHub</a>
+            <a href="https://github.com/aquila3D/health-econ-portfolio/raw/main/1_caribbean_health_financing/analysis/COMPLETE_ANALYSIS_PUBLICATION_READY.R" class="project-link">R Code</a>
+            <a href="https://github.com/aquila3D/health-econ-portfolio/raw/main/1_caribbean_health_financing/data/panel_analysis_lac_EXTENDED.csv" class="project-link">Dataset</a>
           </div>
         </div>
 
@@ -638,52 +397,84 @@
     <!-- SKILLS -->
     <section id="skills" class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title">Technical Skills</h2>
       </div>
-
       <div class="skills-grid">
         <div class="skill-card">
-          <div class="skill-top"><span class="skill-name">R</span><span class="skill-level">Advanced</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          <div class="skill-top">
+            <span class="skill-name">R (Tidyverse, ggplot2, plm)</span>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
         </div>
         <div class="skill-card">
-          <div class="skill-top"><span class="skill-name">Excel / VBA</span><span class="skill-level">Advanced</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          <div class="skill-top">
+            <span class="skill-name">Excel / VBA</span>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
         </div>
         <div class="skill-card">
-          <div class="skill-top"><span class="skill-name">Python</span><span class="skill-level">Intermediate</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:58%"></div></div>
+          <div class="skill-top">
+            <span class="skill-name">Power BI</span>
+            <span class="skill-level">Intermediate</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 72%;"></div></div>
         </div>
         <div class="skill-card">
-          <div class="skill-top"><span class="skill-name">SAS</span><span class="skill-level">Intermediate</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:52%"></div></div>
+          <div class="skill-top">
+            <span class="skill-name">Python</span>
+            <span class="skill-level">Intermediate</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
         </div>
         <div class="skill-card">
-          <div class="skill-top"><span class="skill-name">WinBUGS</span><span class="skill-level">Applied</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:45%"></div></div>
+          <div class="skill-top">
+            <span class="skill-name">SAS</span>
+            <span class="skill-level">Intermediate</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 72%;"></div></div>
         </div>
         <div class="skill-card">
-          <div class="skill-top"><span class="skill-name">Stata</span><span class="skill-level">Beginner</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:28%"></div></div>
+          <div class="skill-top">
+            <span class="skill-name">WinBUGS</span>
+            <span class="skill-level">Applied</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 70%;"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-top">
+            <span class="skill-name">Stata</span>
+            <span class="skill-level">Beginner</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 50%;"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-top">
+            <span class="skill-name">SQL</span>
+            <span class="skill-level">Intermediate</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 70%;"></div></div>
         </div>
       </div>
 
+      <h3 style="font-family: var(--serif); font-size: 1.4rem; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--ink); font-weight: 600;">Applied Expertise</h3>
       <div class="domain-grid">
         <div class="domain-card">
-          <div class="domain-label">Health Economic Evaluation</div>
-          <div class="domain-desc">Cost-effectiveness analysis (CEA), Cost-utility analysis (CUA), Budget impact analysis</div>
+          <div class="domain-label">Health Technology Assessment</div>
+          <div class="domain-desc">Cost-effectiveness analysis (CEA), cost-utility analysis (CUA), budget impact analysis, ICER</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">HTA &amp; Market Access</div>
-          <div class="domain-desc">French HAS system, CEPS, EU HTA regulation, dossiers de transparence, ICER</div>
+          <div class="domain-label">Market Access & HTA</div>
+          <div class="domain-desc">HAS dossiers, EU HTA regulation, transparency files, health system positioning</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Statistical Modelling</div>
-          <div class="domain-desc">Decision trees, Markov models, Bayesian NMA, OLS regression, biostatistics</div>
+          <div class="domain-label">Statistical Modeling</div>
+          <div class="domain-desc">Decision trees, Markov models, Bayesian NMA, OLS/logistic regression, biostatistics</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Scientific Background</div>
-          <div class="domain-desc">Molecular biology, clinical pathways, laboratory quality assurance, drug mechanisms</div>
+          <div class="domain-label">Health Data Analysis</div>
+          <div class="domain-desc">Classification, prediction, clustering, natural language processing, time-series analysis</div>
         </div>
       </div>
     </section>
@@ -699,27 +490,30 @@
           <div class="edu-year">2025 – 2027</div>
           <div>
             <div class="edu-degree">MSc Health Economics</div>
-            <div class="edu-inst">Le Mans Université — Faculté de Droit, Sciences économiques &amp; de Gestion</div>
-            <div class="edu-inst" style="margin-top:4px;font-size:12px;">Health economic evaluation · Biostatistics · Econometrics · R / SAS / Python / VBA · Big data in health · Markov &amp; decision tree modelling</div>
-            <div class="edu-status"><span class="dot-live"></span> Currently enrolled — M2 in alternance from September 2026</div>
+            <div class="edu-inst">Le Mans University — Faculty of Law, Economics & Management</div>
+            <div class="edu-detail">
+              <strong>M1 Completed (2025-2026):</strong> Introduction to R · SAS · Excel/VBA · Statistics · RGPD · Microeconomics of Health · Macroeconomics & Insurance · Data Mining · Modeling & Health Economics Evaluation · Bayesian Meta-analyses · Public Health · Finance
+              <br><strong>M2 Planned (2026-2027):</strong> Advanced HTA & Market Access · Advanced Econometrics · Health Policy & Financing · Clinical Decision-Making & Markov Models · Health Outcomes Research · Professional Internship
+            </div>
+            <div class="edu-status"><span class="dot-live"></span> M2 alternance from September 2026</div>
           </div>
         </div>
 
         <div class="edu-item">
           <div class="edu-year">2024 – 2025</div>
           <div>
-            <div class="edu-degree">MSc Education — Biotechnology, Health &amp; Environment (MEEF BSE)</div>
-            <div class="edu-inst">Université Claude Bernard Lyon 1 — INSPÉ</div>
-            <div class="edu-inst" style="margin-top:4px;font-size:12px;">Health sciences · Quality &amp; methodology · Scientific pedagogy · Vocational lycée internships</div>
+            <div class="edu-degree">Master MEEF — Biotechnology Health Environment</div>
+            <div class="edu-inst">Claude Bernard Lyon 1 University — INSPÉ Teacher Training Institute</div>
+            <div class="edu-detail">Medical-Social Sciences · Applied Microbiology · Biochemistry · Health & Environmental Prevention (PSE) · Didactics of Applied Sciences · Scientific Investigation Methodology · Project Management · Professional Teaching Placements (secondary schools)</div>
           </div>
         </div>
 
         <div class="edu-item">
           <div class="edu-year">2018 – 2021</div>
           <div>
-            <div class="edu-degree">BSc Molecular Biology (with Economics)</div>
+            <div class="edu-degree">BSc Molecular Biology (Economics Option)</div>
             <div class="edu-inst">University of the West Indies, Mona — Kingston, Jamaica</div>
-            <div class="edu-inst" style="margin-top:4px;font-size:12px;">Biological analysis · Pathology &amp; disease mechanisms · Quantitative economics · Laboratory QA</div>
+            <div class="edu-detail">Biochemistry · Cell Biology · Genetics & Molecular Biology · Microbiology · Ecology & Evolution · Disease Pathology · Laboratory Practice & Quality Assurance · Microeconomics & Macroeconomics · Health & Environmental Economics · Research Methods & Data Analysis</div>
           </div>
         </div>
 
@@ -727,36 +521,45 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="fade-in">
+    <section class="fade-in">
       <div class="section-header">
         <h2 class="section-title">Experience</h2>
       </div>
       <div class="exp-list">
 
         <div class="exp-item">
-          <div class="exp-dates">Jun – Aug 2026</div>
+          <div class="exp-dates">June – Aug 2026</div>
           <div>
-            <div class="exp-role">Health Data Analyst Intern</div>
-            <div class="exp-org">University Hospital of the West Indies — Oncohematology Unit, Kingston, Jamaica</div>
-            <p class="exp-desc">Audit and modelling of care pathways to optimise patient flow and reduce wait times. Analysis and synthesis of hospital databases to formulate strategic and organisational recommendations to medical management.</p>
+            <div class="exp-role">Health Data Analyst — M1 Internship</div>
+            <div class="exp-org">University Hospital of the West Indies — Oncohematology Clinic, Kingston, Jamaica</div>
+            <p class="exp-desc">Patient pathway auditing and care flow modeling. Hospital database analysis and synthesis. Strategic recommendations for clinical management and operational optimization to medical leadership.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <div class="exp-dates">Oct 2021 – Apr 2026</div>
+          <div class="exp-dates">Oct 2021 – April 2026</div>
           <div>
-            <div class="exp-role">Contractual Professor — English Language Assistant</div>
-            <div class="exp-org">France Éducation International — Nîmes &amp; Lyon, France</div>
-            <p class="exp-desc">Design and delivery of pedagogical content requiring strong communication and presentation of complex information. Individualised student support and development of learning strategies within the French public education system.</p>
+            <div class="exp-role">Contract Lecturer — English Language Instructor</div>
+            <div class="exp-org">France Education International — Nîmes & Lyon, France</div>
+            <p class="exp-desc">5 years teaching English to primary school students. Curriculum design, lesson planning, student assessment, and classroom management in French public education system. Experience working with diverse learners and supporting individual student progress.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <div class="exp-dates">Jun – Sep 2021</div>
+          <div class="exp-dates">2024 – 2026</div>
+          <div>
+            <div class="exp-role">Teaching Placement — Health & Environmental Sciences</div>
+            <div class="exp-org">Lycée Hélène Boucher & Lycée Jehanne de France — Lyon, France</div>
+            <p class="exp-desc">Professional teaching in vocational schools. Instruction in applied sciences, health, hygiene, and environmental prevention to diverse student populations (CAP APH, Bac Pro HPS, Bac Pro ASSP). Course design on health-environmental topics: biological and chemical risks, hygiene protocols, physiopathology. Classroom management including students with special needs and language learners, assessment and differentiation.</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-dates">June – Sept 2021</div>
           <div>
             <div class="exp-role">Laboratory Technician</div>
             <div class="exp-org">Caledonia Medical Laboratory — Kingston, Jamaica</div>
-            <p class="exp-desc">Biological and haematological analyses with strict quality control protocols. Application of quality assurance programmes and regulatory compliance — directly transferable to health data management and dossier constitution.</p>
+            <p class="exp-desc">Biological and hematological analyses with strict quality control. Rigorous implementation of quality assurance protocols. Skills directly applicable to regulatory dossiers and HTA documentation standards.</p>
           </div>
         </div>
 
@@ -773,14 +576,14 @@
           <span class="lang-flag">🇯🇲</span>
           <div>
             <div class="lang-name">English</div>
-            <div class="lang-level-text">Native</div>
+            <div class="lang-level-text">Native speaker</div>
           </div>
         </div>
         <div class="lang-card">
           <span class="lang-flag">🇫🇷</span>
           <div>
             <div class="lang-name">French</div>
-            <div class="lang-level-text">B2 — Upper intermediate (DELF certified)</div>
+            <div class="lang-level-text">B2/C1 Level — DELF certified</div>
           </div>
         </div>
       </div>
@@ -789,10 +592,10 @@
     <!-- CONTACT -->
     <section id="contact" class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title">Contact & Internship</h2>
       </div>
-      <p style="font-size:14px;color:var(--muted);margin-bottom:1.25rem;max-width:480px;">
-        Currently seeking an alternance contract for M2 in Health Economics (September 2026 – August 2027). Open to opportunities in HTA, market access, health data analysis, and pharmacoeconomics.
+      <p class="contact-intro">
+        Seeking M2 alternance/internship in Health Economics (Sept 2026 onwards). Open to opportunities in HTA, market access, health data analysis, and health policy. Available to contribute immediately to rigorous research projects with reproducible code.
       </p>
       <div class="contact-grid">
         <a href="mailto:aquilawilliams02@gmail.com" class="contact-item">
@@ -809,11 +612,11 @@
             <div class="contact-value">Aquila Williams</div>
           </div>
         </a>
-        <a href="https://github.com/" target="_blank" class="contact-item">
+        <a href="https://github.com/aquila3D/health-econ-portfolio" target="_blank" class="contact-item">
           <div class="contact-icon">⌥</div>
           <div>
             <div class="contact-label">GitHub</div>
-            <div class="contact-value">Add your username</div>
+            <div class="contact-value">health-econ-portfolio</div>
           </div>
         </a>
         <div class="contact-item">
@@ -825,22 +628,19 @@
         </div>
       </div>
     </section>
+
   </div>
 
   <footer>
-    <p>Aquila Williams &mdash; Health Economist &mdash; 2026</p>
+    <p>Aquila Williams — Health Economist — 2026</p>
   </footer>
 
   <script>
-    // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.08 });
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 
