@@ -80,18 +80,6 @@
       border-radius: 100px; border: 1px solid var(--rule);
       color: var(--muted); background: var(--card);
     }
-    .hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--sans); font-size: 13px; font-weight: 600;
-      padding: 11px 22px; border-radius: 6px;
-      text-decoration: none; transition: all 0.25s;
-      cursor: pointer; border: none; letter-spacing: 0.02em;
-    }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: #224830; transform: translateY(-2px); }
-    .btn-secondary { background: var(--card); color: var(--ink); border: 1.5px solid var(--rule); }
-    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
     .availability-timeline {
       background: var(--card);
@@ -311,6 +299,7 @@
 
       <div class="projects-grid">
 
+        <!-- PROJET 1: NMA -->
         <div class="project-card">
           <div class="project-top">
             <div>
@@ -329,11 +318,12 @@
             <span class="tag">15 RCTs</span>
           </div>
           <div class="project-links">
-            <a href="2_venous_ulcers_nma/" class="project-link">GitHub</a>
-            <a href="https://github.com/aquila3D/health-econ-portfolio/raw/main/2_venous_ulcers_nma/paper/BAKHOUM_WILLIAMS_Projet_Meta_Rapport.pdf" class="project-link">PDF</a>
+            <a href="2_venous_ulcers_nma/" class="project-link">Voir sur GitHub</a>
+            <a href="2_venous_ulcers_nma/paper/BAKHOUM_WILLIAMS_Projet_Meta_Rapport.pdf" target="_blank" class="project-link">Rapport PDF</a>
           </div>
         </div>
 
+        <!-- PROJET 2: Data Mining -->
         <div class="project-card">
           <div class="project-top">
             <div>
@@ -352,34 +342,38 @@
             <span class="tag">1 455 observations</span>
           </div>
           <div class="project-links">
-            <a href="data_mining/" class="project-link">GitHub</a>
-            <a href="https://github.com/aquila3D/health-econ-portfolio/raw/main/3_cancer_survival_datamining/paper/BAKHOUM_WILLIAMS_Projet_data_mining_rapport.pdf" class="project-link">PDF</a>
+            <a href="data_mining/" class="project-link">Voir sur GitHub</a>
+            <a href="data_mining/paper/BAKHOUM_WILLIAMS_Projet_data_mining_rapport.pdf" target="_blank" class="project-link">Rapport PDF</a>
           </div>
         </div>
 
+        <!-- PROJET 3: Data Visualization -->
         <div class="project-card">
           <div class="project-top">
             <div>
               <div class="project-name">Déterminants de l'Espérance de Vie : Visualisation & Analyse</div>
               <div class="project-year">Projet M1, 2026</div>
             </div>
-            <span class="project-lang">R / PowerPoint</span>
+            <span class="project-lang">Python • R</span>
           </div>
-          <p class="project-desc">Analyse exploratoire et visualisation interactive des déterminants de l'espérance de vie sur 38 pays de l'OCDE (2016). Construction d'une base de données multidimensionnelle intégrant variables économiques, sanitaires et socio-environnementales.</p>
+          <p class="project-desc">Analyse exploratoire et visualisation multidimensionnelle des déterminants de l'espérance de vie sur 38 pays de l'OCDE (2016). Construction d'une base de données intégrant variables économiques, sanitaires et socio-environnementales.</p>
           <div class="project-details">
-            <strong>Approche :</strong> Analyse descriptive, corrélations, visualisations dynamiques et décomposition des facteurs d'influence. Variables : PIB réel, dépenses santé, taux de chômage, mortalité infantile, pollution, consommation d'alcool. 38 observations, 8+ variables explicatives.
+            <strong>Approche :</strong> Analyse descriptive, réduction de dimension (ACP), clustering et modélisation par régression linéaire multiple ($R^2 = 0{,}43$). Les dépenses de santé (% du PIB) ressortent comme le prédicteur le plus significatif ($p &lt; 0{,}01$).
           </div>
           <div class="project-tags">
             <span class="tag-complete">✓ Complet</span>
             <span class="tag">Data Visualization</span>
+            <span class="tag">ACP &amp; Clustering</span>
+            <span class="tag">Économétrie (MCO)</span>
             <span class="tag">38 pays OCDE</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/aquila3D/health-econ-portfolio/tree/main/data_visualization" class="project-link">GitHub</a>
-            <a href="https://github.com/aquila3D/health-econ-portfolio/raw/main/data_visualization/BAKHOUM_WILLIAMS_Projet_Visualisation_M1SANTE.pdf" class="project-link">PDF</a>
+            <a href="data_visualization/" class="project-link">Voir sur GitHub</a>
+            <a href="data_visualization/paper/BAKHOUM&amp;WILLIAMS_Projet_Visualisation_M1SANTE.pdf" target="_blank" class="project-link">Rapport PDF</a>
           </div>
         </div>
 
+        <!-- PROJET 4: LAC Health Financing -->
         <div class="project-card">
           <div class="project-top">
             <div>
@@ -398,7 +392,7 @@
             <span class="tag">31 pays</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/aquila3D/health-econ-portfolio/tree/main/1_caribbean_health_financing" class="project-link">GitHub</a>
+            <a href="https://github.com/aquila3D/health-econ-portfolio/tree/main/1_caribbean_health_financing" target="_blank" class="project-link">Voir sur GitHub</a>
           </div>
         </div>
 
@@ -642,11 +636,11 @@
             <div class="contact-value">Aquila Williams</div>
           </div>
         </a>
-        <a href="https://github.com/aquila3D/health-econ-portfolio" target="_blank" class="contact-item">
+        <a href="https://github.com/aquila3D" target="_blank" class="contact-item">
           <div class="contact-icon">⌥</div>
           <div>
             <div class="contact-label">GitHub</div>
-            <div class="contact-value">health-econ-portfolio</div>
+            <div class="contact-value">aquila3D</div>
           </div>
         </a>
         <div class="contact-item">
