@@ -106,11 +106,40 @@
 
     .projects-intro {
       background: var(--accent-light); padding: 2rem 2rem;
-      border-radius: 10px; margin-bottom: 2.5rem;
+      border-radius: 10px; margin-bottom: 2rem;
       border-left: 4px solid var(--accent);
     }
     .projects-intro-title { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); margin-bottom: 0.8rem; }
     .projects-intro-desc { font-size: 15px; color: var(--muted); line-height: 1.75; }
+
+    /* Filter buttons styling */
+    .project-filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 100px;
+      border: 1px solid var(--rule);
+      background: var(--card);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .filter-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
 
     .projects-grid {
       display: flex; flex-direction: column;
@@ -140,6 +169,7 @@
     .project-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
     .tag { font-size: 11px; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--rule); color: var(--muted); font-weight: 500; }
     .tag-complete { font-size: 11px; padding: 4px 10px; border-radius: 4px; background: #e6f7f0; color: #0d5a47; border: 1px solid #99d9c8; font-weight: 500; }
+    .tag-upcoming { font-size: 11px; padding: 4px 10px; border-radius: 4px; background: #eef2ff; color: #3730a3; border: 1px solid #c7d2fe; font-weight: 500; }
     .project-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1rem; }
     .project-link {
       font-size: 12px; padding: 6px 12px; border-radius: 4px;
@@ -243,6 +273,7 @@
       <li><a href="#projets">Projets</a></li>
       <li><a href="#competences">Compétences</a></li>
       <li><a href="#formation">Formation</a></li>
+      <li><a href="#experience">Expérience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -251,24 +282,24 @@
 
     <!-- HERO -->
     <section class="hero fade-in">
-      <div class="hero-eyebrow">Économiste de la Santé & Data Analyst</div>
-      <h1>Recherche, données & <em>conception des systèmes de santé</em></h1>
+      <div class="hero-eyebrow">Économiste de la Santé &amp; Data Analyst</div>
+      <h1>Recherche, données &amp; <em>conception des systèmes de santé</em></h1>
       <p class="hero-bio">
-        Économiste de la santé et analyste de données combinant un socle scientifique en biologie moléculaire et des compétences quantitatives appliquées (économétrie, modélisation bayésienne, machine learning). Formée à l'évaluation médico-économique, à l'analyse de données de santé et à la microéconomie de l'assurance, avec une expérience pratique en audit organisationnel et en gestion de projet. Recherche un stage conventionné (rythme alterné ou temps plein) afin d'apporter un appui analytique et stratégique sur des projets d'aide à la décision et de valorisation des données.
+        Économiste de la santé et analyste de données combinant un socle scientifique en biologie moléculaire et des compétences quantitatives appliquées (économétrie, modélisation bayésienne, machine learning)[cite: 28]. Formé à l'évaluation médico-économique, à l'analyse de données de santé et à la microéconomie de l'assurance, avec une expérience pratique en audit organisationnel et en gestion de projet[cite: 28]. Recherche un stage conventionné (rythme alterné ou temps plein dès octobre 2026) afin d'apporter un appui analytique et stratégique sur des projets d'aide à la décision et de valorisation des données[cite: 28].
       </p>
       <div class="hero-pills" style="margin-bottom: 2rem;">
-        <span class="pill">Autonomie & auto-formation</span>
-        <span class="pill">Adaptabilité & transversalité</span>
+        <span class="pill">Autonomie &amp; auto-formation</span>
+        <span class="pill">Adaptabilité &amp; transversalité</span>
         <span class="pill">Vulgarisation scientifique</span>
         <span class="pill">Travail collaboratif pluridisciplinaire</span>
-        <span class="pill">Rigueur & éthique scientifique</span>
+        <span class="pill">Rigueur &amp; éthique scientifique</span>
         <span class="pill">Gestion des priorités</span>
       </div>
     </section>
 
     <!-- AVAILABILITY TIMELINE -->
     <div class="availability-timeline">
-      <div class="timeline-title">📅 Disponibilité & Calendrier de Stage</div>
+      <div class="timeline-title">📅 Disponibilité &amp; Calendrier de Stage M2</div>
       
       <div class="timeline-option">
         <div class="option-header">Option 1 : Stage Alterné (1er octobre 2026 – 30 juin 2027)</div>
@@ -280,7 +311,7 @@
       </div>
 
       <div class="timeline-option">
-        <div class="option-header">Option 2 : Stage Temps Plein (avril – septembre 2027)</div>
+        <div class="option-header">Option 2 : Stage Temps Plein (Avril – Septembre 2027)</div>
         <div class="timeline-detail">
           <strong>Type :</strong> Stage de fin d'études<br>
           <strong>Format :</strong> Temps plein en entreprise
@@ -291,31 +322,113 @@
     <!-- PROJETS -->
     <section id="projets">
       <div class="projects-intro">
-        <div class="projects-intro-title">Projets & Travaux Quantitatifs</div>
+        <div class="projects-intro-title">Projets &amp; Travaux Quantitatifs</div>
         <div class="projects-intro-desc">
-          Travaux appliqués et études en cours combinant économétrie de la santé, modélisation bayésienne, machine learning, évaluation médico-économique et analyse du risque assurantiel. Ce corpus regroupe des recherches académiques (M1 & M2), des collaborations hospitalières et de futurs projets d'analyse de données de santé.
+          Travaux appliqués et protocoles décisionnels combinant modélisation médico-économique (Markov, PSA), inférence causale sur bases médico-administratives (type SNDS), économétrie de panel et machine learning[cite: 28].
         </div>
+      </div>
+
+      <!-- FILTER BUTTONS -->
+      <div class="project-filters">
+        <button class="filter-btn active" onclick="filterProjects('all')">Tous les projets (8)</button>
+        <button class="filter-btn" onclick="filterProjects('heor')">Modélisation &amp; HTA (4)</button>
+        <button class="filter-btn" onclick="filterProjects('rwe')">Données Réelles &amp; RWE (2)</button>
+        <button class="filter-btn" onclick="filterProjects('policy')">Économétrie &amp; Politiques (2)</button>
       </div>
 
       <div class="projects-grid">
 
-        <!-- PROJET 1: NMA -->
-        <div class="project-card">
+        <!-- ================= PILLAR 1: MODÉLISATION MÉDICO-ÉCONOMIQUE & HTA ================= -->
+
+        <!-- 1. Markov Decision Model -->
+        <div class="project-card" data-category="heor">
+          <div class="project-top">
+            <div>
+              <div class="project-name">Modélisation de l'Efficience Décisionnelle Post-SCA</div>
+              <div class="project-year">Projet M2S2, 2027</div>
+            </div>
+            <span class="project-lang">R • Modèle de Markov</span>
+          </div>
+          <p class="project-desc">
+            Modélisation médico-économique comparant un programme de suivi renforcé post-SCA au suivi standard sur 5 ans en cycles trimestriels[cite: 20, 21]. Conception d'un modèle de Markov à 5 états incluant un état tunnel pour la récidive aiguë, matrices de transition dynamiques, actualisation (2,5 %) et correction de demi-cycle[cite: 21, 22].
+          </p>
+          <div class="project-details">
+            <strong>Analyses :</strong> Cas de base déterministe, calcul des coûts cumulés, QALYs, ICER et bénéfice monétaire net incrémental (iNMB sous 20k€, 30k€ et 50k€/QALY)[cite: 21, 23]. Analyses de scénarios et validation interne de cohérence matricielle[cite: 22, 25].
+          </div>
+          <div class="project-tags">
+            <span class="tag-upcoming">⏳ En cours (2026-2027)</span>
+            <span class="tag">Modélisation HEOR</span>
+            <span class="tag">Arbres &amp; Tunnels de Markov</span>
+            <span class="tag">Aide à la Décision</span>
+          </div>
+        </div>
+
+        <!-- 2. Monte Carlo & Bootstrap (PSA) -->
+        <div class="project-card" data-category="heor">
+          <div class="project-top">
+            <div>
+              <div class="project-name">Quantification de l'Incertitude : Simulation de Monte Carlo &amp; Bootstrap</div>
+              <div class="project-year">Projet M2S1, 2026</div>
+            </div>
+            <span class="project-lang">R • Monte Carlo • Bootstrap</span>
+          </div>
+          <p class="project-desc">
+            Analyse de sensibilité probabiliste (PSA) approfondie sur la prise en charge post-SCA, confrontant approches paramétrique et non paramétrique sur plus de 5 000 réplications conjointes[cite: 3, 24].
+          </p>
+          <div class="project-details">
+            <strong>Méthodes :</strong> PSA paramétrique avec distributions imposées (Beta pour probabilités et utilités, Gamma pour coûts, Log-normale pour risques relatifs)[cite: 24] et bootstrap individuel non paramétrique ré-échantillonnant les trajectoires cliniques[cite: 24]. Tracé des plans coût-efficacité, courbes d'acceptabilité (CEAC) et calcul de l'EVPI[cite: 24, 25].
+          </div>
+          <div class="project-tags">
+            <span class="tag-upcoming">⏳ En cours (2026-2027)</span>
+            <span class="tag">Simulation Monte Carlo</span>
+            <span class="tag">Bootstrap Non Paramétrique</span>
+            <span class="tag">CEAC &amp; EVPI</span>
+          </div>
+        </div>
+
+        <!-- 3. BIA Protocol -->
+        <div class="project-card" data-category="heor">
+          <div class="project-top">
+            <div>
+              <div class="project-name">Protocole d'Évaluation Ex Ante de l'Impact Budgétaire (BIA) : SCA</div>
+              <div class="project-year">Projet M2S1, 2026</div>
+            </div>
+            <span class="project-lang">AIB • Cadre HAS / HTA</span>
+          </div>
+          <p class="project-desc">
+            Rédaction d'un protocole d'analyse d'impact budgétaire selon les exigences méthodologiques de la HAS pour l'introduction d'une technologie diagnostique innovante dans le parcours de suspicion de SCA (domicile – urgences – hôpital)[cite: 16, 17].
+          </p>
+          <div class="project-details">
+            <strong>Cadrage :</strong> Perspective Assurance maladie, dimensionnement de la population cible, modélisation des parts de marché et des taux de pénétration sur 3 à 5 ans, calcul des coûts directs différentiels non actualisés et exploration paramétrique de l'incertitude[cite: 17].
+          </div>
+          <div class="project-tags">
+            <span class="tag-upcoming">⏳ En cours (2026-2027)</span>
+            <span class="tag">Impact Budgétaire (BIA)</span>
+            <span class="tag">Méthodologie HAS</span>
+            <span class="tag">Accès au Marché</span>
+          </div>
+        </div>
+
+        <!-- 4. NMA Venous Ulcers -->
+        <div class="project-card" data-category="heor">
           <div class="project-top">
             <div>
               <div class="project-name">Méta-Analyse en Réseau : Traitement de l'Ulcère Veineux</div>
               <div class="project-year">Projet M1, 2026</div>
             </div>
-            <span class="project-lang">R + WinBUGS</span>
+            <span class="project-lang">R • WinBUGS</span>
           </div>
-          <p class="project-desc">Analyse bayésienne hiérarchique en réseau de 15 essais cliniques randomisés comparant 6 stratégies thérapeutiques pour l'ulcère de jambe. Modèles à effets aléatoires via simulation MCMC. Diagnostics de convergence (Gelman-Rubin, trace plots) et classement probabiliste des traitements via SUCRA.</p>
+          <p class="project-desc">
+            Synthèse bayésienne hiérarchique en réseau de 15 essais cliniques randomisés comparant 6 stratégies thérapeutiques pour l'ulcère de jambe[cite: 28]. Modèles à effets aléatoires par chaîne de Markov Monte Carlo (MCMC) et calcul des probabilités de rang SUCRA[cite: 28].
+          </p>
           <div class="project-details">
-            <strong>Résultats clés :</strong> Thérapie laser : 42,8 % de probabilité d'être la plus efficace. Hétérogénéité modérée identifiée (I² = 46 %). Analyses de sensibilité complètes.
+            <strong>Résultats :</strong> Thérapie laser identifiée comme la plus efficace (probabilité SUCRA de 42,8 %)[cite: 28]. Analyse de l'hétérogénéité (I² = 46 %) et évaluation de la cohérence boucle-par-boucle[cite: 28].
           </div>
           <div class="project-tags">
             <span class="tag-complete">✓ Complet</span>
-            <span class="tag">Statistiques Bayésiennes</span>
-            <span class="tag">15 RCTs</span>
+            <span class="tag">Inférence Bayésienne</span>
+            <span class="tag">Evidence Synthesis</span>
+            <span class="tag">WinBUGS</span>
           </div>
           <div class="project-links">
             <a href="2_venous_ulcers_nma/" class="project-link">Voir sur GitHub</a>
@@ -323,49 +436,77 @@
           </div>
         </div>
 
-        <!-- PROJET 2: Data Mining -->
-        <div class="project-card">
+        <!-- ================= PILLAR 2: DONNÉES DE SANTÉ & RWE ================= -->
+
+        <!-- 5. Ex Post Causal SNDS -->
+        <div class="project-card" data-category="rwe">
           <div class="project-top">
             <div>
-              <div class="project-name">Classification Supervisée : Prédiction de Survie au Cancer</div>
-              <div class="project-year">Projet M1, 2026</div>
+              <div class="project-name">Évaluation Ex Post &amp; Inférence Causale sur Données Synthétiques (Type SNDS)</div>
+              <div class="project-year">Projet M2S2, 2027</div>
             </div>
-            <span class="project-lang">R</span>
+            <span class="project-lang">R • IPTW • Données Médico-Admin</span>
           </div>
-          <p class="project-desc">Apprentissage automatique pour prédire la survie nette à 5 ans chez 1 455 patients cancéreux dans 46 pays de l'OCDE (2004-2014). Implémentation et comparaison de trois algorithmes : CART, Random Forest, régression logistique multinomiale.</p>
+          <p class="project-desc">
+            Évaluation médico-économique observationnelle rétrospective sur données synthétiques relationnelles mimant le SNDS (tables patients, événements cardiovasculaires, dépenses mensuelles de soins)[cite: 7, 8, 9]. Émulation d'un essai cible avec design landmark fixé à J30 contre le biais de temps immortel[cite: 8, 10].
+          </p>
           <div class="project-details">
-            <strong>Résultats clés :</strong> CART : 91,7 % d'accuracy (Kappa = 0,87). Type de cancer explique ~95 % de la variance. Validation croisée 5-fold.
+            <strong>Méthodes :</strong> Estimation du score de propension, pondération par IPTW stabilisée (ATE), vérification de l'équilibre par Love plot (SMD &lt; 0,10)[cite: 10]. Analyse des coûts par GLM pondéré, risques de MACE évités, analyse coût-utilité hybride avec trajectoires de QALYs et bootstrap patient[cite: 8, 11].
           </div>
           <div class="project-tags">
-            <span class="tag-complete">✓ Complet</span>
-            <span class="tag">Machine Learning</span>
-            <span class="tag">1 455 observations</span>
-          </div>
-          <div class="project-links">
-            <a href="data_mining/" class="project-link">Voir sur GitHub</a>
-            <a href="data_mining/paper/BAKHOUM_WILLIAMS_Projet_data_mining_rapport.pdf" target="_blank" class="project-link">Rapport PDF</a>
+            <span class="tag-upcoming">⏳ En cours (2026-2027)</span>
+            <span class="tag">Données Type SNDS</span>
+            <span class="tag">Inférence Causale (IPTW)</span>
+            <span class="tag">Target Trial Emulation</span>
+            <span class="tag">RWE</span>
           </div>
         </div>
 
-        <!-- PROJET 3: Data Visualization -->
-        <div class="project-card">
+        <!-- 6. Hospital Audit -->
+        <div class="project-card" data-category="rwe">
           <div class="project-top">
             <div>
-              <div class="project-name">Déterminants de l'Espérance de Vie : Visualisation & Analyse</div>
+              <div class="project-name">Audit Organisationnel &amp; Analyse des Parcours de Soins en Onco-Hématologie</div>
+              <div class="project-year">Stage Professionnel, 2026</div>
+            </div>
+            <span class="project-lang">R • Audit Opérationnel</span>
+          </div>
+          <p class="project-desc">
+            Audit clinique et quantitatif complet des flux de patients au sein de la clinique ambulatoire d'hémato-oncologie du University Hospital of the West Indies (Kingston)[cite: 28].
+          </p>
+          <div class="project-details">
+            <strong>Réalisations :</strong> Extraction et nettoyage des bases de données hospitalières, modélisation des goulets d'étranglement dans le parcours de dispensation et propositions de restructuration organisationnelle pour réduire les temps d'attente présentées à la gouvernance[cite: 28].
+          </div>
+          <div class="project-tags">
+            <span class="tag-complete">✓ Complet</span>
+            <span class="tag">Audit Hospitalier</span>
+            <span class="tag">Optimisation des Flux</span>
+            <span class="tag">Aide à la Décision</span>
+          </div>
+        </div>
+
+        <!-- ================= PILLAR 3: ÉCONOMÉTRIE & POLITIQUES DE SANTÉ ================= -->
+
+        <!-- 7. OECD Life Expectancy -->
+        <div class="project-card" data-category="policy">
+          <div class="project-top">
+            <div>
+              <div class="project-name">Déterminants de l'Espérance de Vie dans l'OCDE : Analyse Multidimensionnelle</div>
               <div class="project-year">Projet M1, 2026</div>
             </div>
             <span class="project-lang">Python • R</span>
           </div>
-          <p class="project-desc">Analyse exploratoire et visualisation multidimensionnelle des déterminants de l'espérance de vie sur 38 pays de l'OCDE (2016). Construction d'une base de données intégrant variables économiques, sanitaires et socio-environnementales.</p>
+          <p class="project-desc">
+            Analyse exploratoire et modélisation économétrique des déterminants sanitaires, économiques et environnementaux de l'espérance de vie sur 38 pays de l'OCDE[cite: 28].
+          </p>
           <div class="project-details">
-  <strong>Approche :</strong> Analyse descriptive, réduction de dimension (ACP), clustering et modélisation par régression linéaire multiple (R<sup>2</sup> = 0,43). Les dépenses de santé (% du PIB) ressortent comme le prédicteur le plus significatif (<em>p</em> &lt; 0,01).
-</div>
+            <strong>Méthodes :</strong> Réduction de dimension (ACP), classification non supervisée (clustering) et régressions multiples (R<sup>2</sup> = 0,43) identifiant les dépenses de santé en % du PIB comme prédicteur majeur (<em>p</em> &lt; 0,01).
+          </div>
           <div class="project-tags">
             <span class="tag-complete">✓ Complet</span>
-            <span class="tag">Data Visualization</span>
-            <span class="tag">ACP &amp; Clustering</span>
             <span class="tag">Économétrie (MCO)</span>
-            <span class="tag">38 pays OCDE</span>
+            <span class="tag">ACP &amp; Clustering</span>
+            <span class="tag">Données OCDE</span>
           </div>
           <div class="project-links">
             <a href="data_visualization/" class="project-link">Voir sur GitHub</a>
@@ -373,26 +514,29 @@
           </div>
         </div>
 
-        <!-- PROJET 4: LAC Health Financing -->
-        <div class="project-card">
+        <!-- 8. LAC Health Financing -->
+        <div class="project-card" data-category="policy">
           <div class="project-top">
             <div>
-              <div class="project-name">Architecture du Financement & Résultats de Santé en LAC</div>
+              <div class="project-name">Architecture du Financement &amp; Résultats de Santé en Amérique Latine et Caraïbes</div>
               <div class="project-year">Recherche Collaborative, 2026</div>
             </div>
-            <span class="project-lang">R</span>
+            <span class="project-lang">R • Économétrie de Panel</span>
           </div>
-          <p class="project-desc">Analyse économétrique comparative de 31 pays d'Amérique Latine et des Caraïbes (2015-2022). Test d'hypothèses concurrentes sur les déterminants des résultats de santé population.</p>
+          <p class="project-desc">
+            Étude économétrique comparative sur données de panel de 31 pays de la région LAC (2015–2022) examinant l'impact des mécanismes de financement sur les indicateurs de santé publique[cite: 28].
+          </p>
           <div class="project-details">
-            <strong>Résultats clés :</strong> Dépenses de santé en % PIB : prédicteur robuste sur tous les résultats (β = 0,94 ans d'espérance de vie, p = 0,001). Test de Hausman rejette le modèle à effets aléatoires (χ² = 45,03, p &lt; 0,001).
+            <strong>Résultats :</strong> Test de spécification de Hausman rejetant les effets aléatoires au profit des effets fixes (χ² = 45,03, <em>p</em> &lt; 0,001) et quantification de l'élasticité de l'espérance de vie aux dépenses de santé[cite: 28].
           </div>
           <div class="project-tags">
             <span class="tag-complete">✓ En cours</span>
-            <span class="tag">Économétrie de Panel</span>
-            <span class="tag">31 pays</span>
+            <span class="tag">Données de Panel</span>
+            <span class="tag">Modèles à Effets Fixes</span>
+            <span class="tag">Financement de la Santé</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/aquila3D/health-econ-portfolio/tree/main/1_caribbean_health_financing" target="_blank" class="project-link">Voir sur GitHub</a>
+            <a href="1_caribbean_health_financing/" class="project-link">Voir sur GitHub</a>
           </div>
         </div>
 
@@ -456,7 +600,7 @@
         </div>
         <div class="skill-card">
           <div class="skill-top">
-            <span class="skill-name">Git & GitHub</span>
+            <span class="skill-name">Git &amp; GitHub</span>
             <span class="skill-level">Appliqué</span>
           </div>
           <div class="skill-bar"><div class="skill-fill" style="width: 78%;"></div></div>
@@ -467,39 +611,39 @@
       <div class="domain-grid">
         <div class="domain-card">
           <div class="domain-label">Évaluation Médico-Économique</div>
-          <div class="domain-desc">Analyse coût-efficacité (CEA), coût-utilité (CUA), analyse d'impact budgétaire, modèles décisionnels</div>
+          <div class="domain-desc">Analyse coût-efficacité (CEA), coût-utilité (CUA), analyse d'impact budgétaire, modèles décisionnels[cite: 28]</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">HTA & Accès au Marché</div>
-          <div class="domain-desc">Dossiers HAS, réglementation HTA européenne, dossiers de transparence, positionnement santé</div>
+          <div class="domain-label">HTA &amp; Accès au Marché</div>
+          <div class="domain-desc">Dossiers HAS, réglementation HTA européenne, dossiers de transparence, positionnement santé[cite: 28]</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Politique Publique & Financement</div>
-          <div class="domain-desc">Évaluation des politiques publiques, financement des systèmes de santé, analyse comparative internationale</div>
+          <div class="domain-label">Politique Publique &amp; Financement</div>
+          <div class="domain-desc">Évaluation des politiques publiques, financement des systèmes de santé, analyse comparative internationale[cite: 28]</div>
         </div>
         <div class="domain-card">
           <div class="domain-label">Microéconomie de l'Assurance</div>
-          <div class="domain-desc">Économie de la protection sociale, gestion des risques, assurance-maladie</div>
+          <div class="domain-desc">Économie de la protection sociale, gestion des risques, assurance-maladie[cite: 28]</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Modélisation & Inférence</div>
-          <div class="domain-desc">Arbres de décision, modèles de Markov, NMA bayésienne, méthodes de Monte Carlo, MCMC</div>
+          <div class="domain-label">Modélisation &amp; Inférence</div>
+          <div class="domain-desc">Arbres de décision, modèles de Markov, NMA bayésienne, méthodes de Monte Carlo, MCMC[cite: 28]</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Data Science & Evidence Synthesis</div>
-          <div class="domain-desc">Classification supervisée, prédiction, analyses de panel, big data, synthèse d'évidences</div>
+          <div class="domain-label">Data Science &amp; Evidence Synthesis</div>
+          <div class="domain-desc">Classification supervisée, prédiction, analyses de panel, big data, synthèse d'évidences[cite: 28]</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Biotechnologies & Santé-Environnement</div>
-          <div class="domain-desc">Microbiologie appliquée, prévention sanitaire, risques professionnels, enseignement en santé</div>
+          <div class="domain-label">Biotechnologies &amp; Santé-Environnement</div>
+          <div class="domain-desc">Microbiologie appliquée, prévention sanitaire, risques professionnels, enseignement en santé[cite: 28]</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Organisation des Soins & Épidémiologie Quantitative</div>
-          <div class="domain-desc">Audit organisationnel, optimisation des flux hospitaliers, analyse de survie, disparités spatiales de santé, santé et vieillissement</div>
+          <div class="domain-label">Organisation des Soins &amp; Épidémiologie Quantitative</div>
+          <div class="domain-desc">Audit organisationnel, optimisation des flux hospitaliers, analyse de survie, disparités spatiales de santé, santé et vieillissement[cite: 28]</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Gouvernance des Données & Outils Décisionnels</div>
-          <div class="domain-desc">Conformité RGPD en santé, gestion de bases de données relationnelles (SQL), création d'interfaces et macros (VBA), traçabilité et assurance qualité</div>
+          <div class="domain-label">Gouvernance des Données &amp; Outils Décisionnels</div>
+          <div class="domain-desc">Conformité RGPD en santé, gestion de bases de données relationnelles (SQL), création d'interfaces et macros (VBA), traçabilité et assurance qualité[cite: 28]</div>
         </div>
       </div>
     </section>
@@ -515,10 +659,10 @@
           <div class="edu-year">2025 – 2027</div>
           <div>
             <div class="edu-degree">Master Économie de la Santé</div>
-            <div class="edu-inst">Université Le Mans — Faculté de Droit, Sciences Économiques & Gestion</div>
+            <div class="edu-inst">Université Le Mans — Faculté de Droit, Sciences Économiques &amp; Gestion[cite: 28]</div>
             <div class="edu-detail">
-              <strong>M1 Validé (2025-2026) :</strong> Introduction à Python · R · SAS · VBA · Visualisation de données · Introduction au Big Data · Économétrie · Biostatistique & analyse de survie · Économie du risque · Macroéconomie de la santé · Droit des données de santé & RGPD · Data mining · Essais cliniques · Comparaison de l'efficacité des technologies de santé : méta-analyses en réseau · Modèles appliqués à l'épidémiologie · Économie de la santé 1 · Microéconomie de l'assurance · Économie de la protection sociale
-              <br><strong>M2 En Cours (2026-2027) :</strong> Méthodes d'évaluation des politiques publiques · Méthodes de Monte Carlo · Évaluation ex ante de l'efficience et de l'impact budgétaire · Économie de la santé 2 · Santé et vieillissement · Financement des systèmes de santé · Machine learning sous Python · Économétrie spatiale · Analyse de survie · Big data sous Python · Applied English for Health Economics · Création d'interface homme/machine sous VBA · Programmation et SQL sous SAS · Modélisation médico-économique & quantification de l'incertitude · Microéconomie de l'assurance approfondie · Évaluation ex post des stratégies & des technologies de santé · Santé publique · Stage alterné (octobre 2026 – juin 2027)
+              <strong>M1 Validé (2025-2026) :</strong> Introduction à Python · R · SAS · VBA · Visualisation de données · Introduction au Big Data · Économétrie · Biostatistique &amp; analyse de survie · Économie du risque · Macroéconomie de la santé · Droit des données de santé &amp; RGPD · Data mining · Essais cliniques · Comparaison de l'efficacité des technologies de santé : méta-analyses en réseau · Modèles appliqués à l'épidémiologie · Économie de la santé 1 · Microéconomie de l'assurance · Économie de la protection sociale[cite: 28]
+              <br><strong>M2 En Cours (2026-2027) :</strong> Méthodes d'évaluation des politiques publiques · Méthodes de Monte Carlo · Évaluation ex ante de l'efficience et de l'impact budgétaire · Économie de la santé 2 · Santé et vieillissement · Financement des systèmes de santé · Machine learning sous Python · Économétrie spatiale · Analyse de survie · Big data sous Python · Applied English for Health Economics · Création d'interface homme/machine sous VBA · Programmation et SQL sous SAS · Modélisation médico-économique &amp; quantification de l'incertitude · Microéconomie de l'assurance approfondie · Évaluation ex post des stratégies &amp; des technologies de santé · Santé publique · Stage alterné (octobre 2026 – juin 2027)[cite: 28]
             </div>
           </div>
         </div>
@@ -527,8 +671,8 @@
           <div class="edu-year">2024 – 2026</div>
           <div>
             <div class="edu-degree">Master MEEF — Biotechnologies Santé Environnement</div>
-            <div class="edu-inst">Université Claude Bernard Lyon 1 — INSPÉ Institut Supérieur de Pédagogie</div>
-            <div class="edu-detail">Sciences Médico-Sociales · Microbiologie Appliquée · Biochimie · Prévention Santé-Environnement (PSE) · Didactique des Sciences Appliquées · Méthodologie de l'Investigation Scientifique · Gestion de Projets. Qualification pour enseigner en lycées professionnels : CAP Agent Propreté et Hygiène (APH), Bac Professionnel Hygiène, Propreté, Stérilisation (HPS), Bac Professionnel Accompagnement Soins et Services à la Personne (ASSP).</div>
+            <div class="edu-inst">Université Claude Bernard Lyon 1 — INSPÉ Institut Supérieur de Pédagogie[cite: 28]</div>
+            <div class="edu-detail">Sciences Médico-Sociales · Microbiologie Appliquée · Biochimie · Prévention Santé-Environnement (PSE) · Didactique des Sciences Appliquées · Méthodologie de l'Investigation Scientifique · Gestion de Projets[cite: 28]. Qualification pour enseigner en lycées professionnels : CAP Agent Propreté et Hygiène (APH), Bac Professionnel Hygiène, Propreté, Stérilisation (HPS), Bac Professionnel Accompagnement Soins et Services à la Personne (ASSP)[cite: 28].</div>
           </div>
         </div>
 
@@ -536,8 +680,8 @@
           <div class="edu-year">2018 – 2021</div>
           <div>
             <div class="edu-degree">Licence Biologie Moléculaire (Option Économie)</div>
-            <div class="edu-inst">University of the West Indies, Mona — Kingston, Jamaïque</div>
-            <div class="edu-detail">Biochimie (Bioenergétique, Biochimie Cellulaire) · Biologie Moléculaire · Biotechnologie · Microbiologie · Épidémiologie & Biostatistiques · Chimie · Pratiques de Laboratoire · Biologie moléculaire humaine · Microéconomie & Macroéconomie · Mathématiques pour les Sciences Sociales · Méthodologie de Recherche</div>
+            <div class="edu-inst">University of the West Indies, Mona — Kingston, Jamaïque[cite: 28]</div>
+            <div class="edu-detail">Biochimie (Bioénergétique, Biochimie Cellulaire) · Biologie Moléculaire · Biotechnologie · Microbiologie · Épidémiologie &amp; Biostatistiques · Chimie · Pratiques de Laboratoire · Human Molecular Biology · Microéconomie &amp; Macroéconomie · Mathématiques pour les Sciences Sociales · Méthodologie de Recherche[cite: 28]</div>
           </div>
         </div>
 
@@ -545,9 +689,9 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="fade-in">
+    <section id="experience" class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Expérience</h2>
+        <h2 class="section-title">Expérience Professionnelle</h2>
       </div>
       <div class="exp-list">
 
@@ -555,17 +699,17 @@
           <div class="exp-dates">Juin – Août 2026</div>
           <div>
             <div class="exp-role">Health Data Analyst — Stage</div>
-            <div class="exp-org">University Hospital of the West Indies — Clinique d'Oncohématologie, Kingston</div>
-            <p class="exp-desc">Audit organisationnel complet de la clinique d'hémato-oncologie incluant analyse des parcours patients et modélisation des flux de soins. Extraction, nettoyage et analyse de bases de données hospitalières; synthèse quantitative et qualitative des données. Identification des goulots d'étranglement opérationnels et des points d'optimisation. Recommandations stratégiques et opérationnelles pour l'amélioration de la gestion clinique, la réduction des délais d'attente et l'efficacité des processus de soins. Rapports d'analyse adressés à la direction médicale et administrative.</p>
+            <div class="exp-org">University Hospital of the West Indies — Clinique d'Oncohématologie, Kingston[cite: 28]</div>
+            <p class="exp-desc">Audit organisationnel complet de la clinique d'hémato-oncologie incluant analyse des parcours patients et modélisation des flux de soins[cite: 28]. Extraction, nettoyage et analyse de bases de données hospitalières; synthèse quantitative et qualitative des données[cite: 28]. Identification des goulots d'étranglement opérationnels et des points d'optimisation[cite: 28]. Recommandations stratégiques et opérationnelles pour l'amélioration de la gestion clinique, la réduction des délais d'attente et l'efficacité des processus de soins[cite: 28]. Rapports d'analyse adressés à la direction médicale et administrative[cite: 28].</p>
           </div>
         </div>
 
         <div class="exp-item">
           <div class="exp-dates">Nov 2025 – Mai 2026</div>
           <div>
-            <div class="exp-role">Enseignant Stagiaire en Sciences Appliquées & Prévention Santé</div>
-            <div class="exp-org">Académie de Lyon — Lycée Jehanne de France, Lyon</div>
-            <p class="exp-desc">Stage pédagogique en autonomie d'enseignement. Conception complète des cours et enseignement en transversal de Prévention Santé-Environnement (PSE) et filières sanitaires (Bac Pro ASSP). Transmission de savoirs appliqués en santé publique : microbiologie appliquée, physiopathologie humaine, hygiène hospitalière. Sensibilisation aux risques biologiques et chimiques en milieu professionnel. Vulgarisation scientifique et conception de supports didactiques adaptés à des publics variés. Gestion de classe en autonomie avec différenciation pédagogique pour élèves allophones et à besoins éducatifs particuliers. Évaluation continue (diagnostique, formative, sommative) et suivi individuel de la progression.</p>
+            <div class="exp-role">Enseignant Stagiaire en Sciences Appliquées &amp; Prévention Santé</div>
+            <div class="exp-org">Académie de Lyon — Lycée Jehanne de France, Lyon[cite: 28]</div>
+            <p class="exp-desc">Stage pédagogique de 7 mois en autonomie d'enseignement[cite: 28]. Conception complète des cours et enseignement transversal de Prévention Santé-Environnement (PSE) et filières sanitaires (Bac Pro ASSP)[cite: 28]. Transmission de savoirs appliqués en santé publique : microbiologie appliquée, physiopathologie humaine, hygiène hospitalière[cite: 28]. Sensibilisation aux risques biologiques et chimiques en milieu professionnel[cite: 28]. Vulgarisation scientifique et conception de supports didactiques adaptés à des publics variés[cite: 28]. Gestion de classe en autonomie avec différenciation pédagogique pour élèves allophones et à besoins éducatifs particuliers[cite: 28].</p>
           </div>
         </div>
 
@@ -573,8 +717,8 @@
           <div class="exp-dates">Nov 2024 – Avr 2025</div>
           <div>
             <div class="exp-role">Enseignant Stagiaire – Observation et Pratique Accompagnée</div>
-            <div class="exp-org">Académie de Lyon — Lycée Professionnel Hélène Boucher, Vénissieux</div>
-            <p class="exp-desc">Stage pédagogique en pratique accompagnée. Sciences appliquées et hygiène professionnelle (CAP APH / Bac Pro HPS). Ingénierie de séquences pédagogiques et différenciation pédagogique. Apprentissage des fondamentaux de la gestion de classe, de la conception de supports didactiques et de l'évaluation des apprentissages.</p>
+            <div class="exp-org">Académie de Lyon — Lycée Professionnel Hélène Boucher, Vénissieux[cite: 28]</div>
+            <p class="exp-desc">Stage pédagogique de 6 mois en pratique accompagnée[cite: 28]. Sciences appliquées et hygiène professionnelle (CAP APH / Bac Pro HPS)[cite: 28]. Ingénierie de séquences pédagogiques et différenciation pédagogique[cite: 28]. Apprentissage des fondamentaux de la gestion de classe, de la conception de supports didactiques et de l'évaluation des apprentissages[cite: 28].</p>
           </div>
         </div>
 
@@ -582,11 +726,30 @@
           <div class="exp-dates">Sept 2021 – Avr 2026</div>
           <div>
             <div class="exp-role">Professeur Contractuel — Assistant d'Anglais</div>
-            <div class="exp-org">France Éducation Internationale — Nîmes & Lyon</div>
-            <p class="exp-desc">Coordination et pilotage pédagogique de programmes d'anglais pour diverse learners. Conception complète du curriculum, création de matériels didactiques originaux et ressources interactives. Enseignement en présentiel, gestion de classes. Mise en œuvre de la différenciation pédagogique. Pilotage d'évaluations formatrices et diagnostiques pour adapter la progression. Collaboration avec les équipes pédagogiques pour assurer la cohérence éducative. Développement d'une posture réflexive sur les pratiques et mesure de l'impact pédagogique.</p>
+            <div class="exp-org">France Éducation International — Nîmes &amp; Lyon[cite: 28]</div>
+            <p class="exp-desc">Coordination et pilotage pédagogique de programmes d'anglais pour diverse learners[cite: 28]. Conception complète du curriculum, création de matériels didactiques originaux et ressources interactives[cite: 28]. Enseignement en présentiel, gestion de classes[cite: 28]. Mise en œuvre de la différenciation pédagogique[cite: 28]. Collaboration avec les équipes pédagogiques pour assurer la cohérence éducative[cite: 28].</p>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT ASSOCIATIF & BENEVOLAT -->
+    <section class="fade-in">
+      <div class="section-header">
+        <h2 class="section-title">Engagement Citoyen &amp; Bénévolat</h2>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dates">2025 – 2026</div>
+          <div>
+            <div class="exp-role">Bénévole — Mentorat &amp; Accompagnement Éducatif</div>
+            <div class="exp-org">Association de la Fondation Étudiante pour la Ville (Afev) — Lyon</div>
+            <p class="exp-desc">
+              Accompagnement individualisé hebdomadaire d'un élève de 11 ans : soutien méthodologique, renforcement de l'autonomie dans les apprentissages et médiation culturelle. Développement de compétences d'écoute active, de pédagogie bienveillante, d'adaptabilité relationnelle et d'engagement pour la réduction des inégalités éducatives.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -600,14 +763,14 @@
           <span class="lang-flag">🇯🇲</span>
           <div>
             <div class="lang-name">Anglais</div>
-            <div class="lang-level-text">Langue maternelle</div>
+            <div class="lang-level-text">Langue maternelle[cite: 28]</div>
           </div>
         </div>
         <div class="lang-card">
           <span class="lang-flag">🇫🇷</span>
           <div>
             <div class="lang-name">Français</div>
-            <div class="lang-level-text">Niveau B2/C1 — DELF Certifié</div>
+            <div class="lang-level-text">Niveau B2/C1 — DELF Certifié[cite: 28]</div>
           </div>
         </div>
       </div>
@@ -616,26 +779,26 @@
     <!-- CONTACT -->
     <section id="contact" class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Contact & Opportunités</h2>
+        <h2 class="section-title">Contact &amp; Opportunités</h2>
       </div>
       <p class="contact-intro">
-        Disponible pour un stage alterné à partir du 1er octobre 2026 ou un stage à temps plein du 19 avril au 17 septembre 2027. Ouverte à la signature d'un contrat CDD ou CDI à l'issue du stage. Mobilité géographique possible.
+        Disponible pour un stage alterné à partir du 1er octobre 2026 ou un stage à temps plein de fin d'études d'avril à septembre 2027. Ouvert à la signature d'un contrat CDD ou CDI à l'issue du stage. Mobilité géographique possible[cite: 28].
       </p>
       <div class="contact-grid">
         <a href="mailto:aquilawilliams02@gmail.com" class="contact-item">
           <div class="contact-icon">✉</div>
           <div>
             <div class="contact-label">Email</div>
-            <div class="contact-value">aquilawilliams02@gmail.com</div>
+            <div class="contact-value">aquilawilliams02@gmail.com[cite: 28]</div>
           </div>
         </a>
         <a href="https://www.linkedin.com/in/aquila-williams-3ba07bb3/" target="_blank" class="contact-item">
-  <div class="contact-icon">in</div>
-  <div>
-    <div class="contact-label">LinkedIn</div>
-    <div class="contact-value">Aquila Williams</div>
-  </div>
-</a>
+          <div class="contact-icon">in</div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">Aquila Williams[cite: 28]</div>
+          </div>
+        </a>
         <a href="https://github.com/aquila3D" target="_blank" class="contact-item">
           <div class="contact-icon">⌥</div>
           <div>
@@ -647,7 +810,7 @@
           <div class="contact-icon">📍</div>
           <div>
             <div class="contact-label">Localisation</div>
-            <div class="contact-value">Lyon / Le Mans, France — Mobilité possible</div>
+            <div class="contact-value">Lyon / Le Mans, France — Mobilité possible[cite: 28]</div>
           </div>
         </div>
       </div>
@@ -660,12 +823,30 @@
   </footer>
 
   <script>
+    // Fade-in animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Interactive category filtering
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
   </script>
 
 </body>
