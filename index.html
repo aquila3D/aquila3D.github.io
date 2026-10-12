@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aquila Williams — Économiste de la Santé</title>
+  <title>Aquila Williams — Health Economist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -46,6 +46,7 @@
       height: 56px;
     }
     .nav-logo { font-family: var(--serif); font-size: 18px; color: var(--ink); letter-spacing: -0.01em; font-weight: 600; }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
       font-size: 12px; font-weight: 600; color: var(--muted);
@@ -53,6 +54,33 @@
       text-transform: uppercase; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--accent); }
+
+    .lang-switcher {
+      display: flex;
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      background: var(--card);
+      overflow: hidden;
+    }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 4px 10px;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    [data-lang="en"] { display: none; }
+    html[lang="en"] [data-lang="fr"] { display: none; }
+    html[lang="en"] [data-lang="en"] { display: block; }
 
     .hero {
       max-width: 820px; margin: 0 auto;
@@ -74,7 +102,7 @@
       font-size: 16px; color: var(--muted);
       max-width: 600px; line-height: 1.8; margin-bottom: 2.5rem;
     }
-    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2.5rem; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem; }
     .pill {
       font-size: 12px; font-weight: 500; padding: 6px 14px;
       border-radius: 100px; border: 1px solid var(--rule);
@@ -268,52 +296,86 @@
 
   <nav>
     <div class="nav-logo">Aquila Williams</div>
-    <ul class="nav-links">
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#formation">Formation</a></li>
-      <li><a href="#experience">Expérience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#formation">Formation</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn active" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+      </div>
+    </div>
   </nav>
 
   <div class="container">
 
     <!-- HERO -->
     <section class="hero fade-in">
-      <div class="hero-eyebrow">Économiste de la Santé &amp; Data Analyst</div>
-      <h1>Recherche, données &amp; <em>conception des systèmes de santé</em></h1>
-      <p class="hero-bio">
+      <div data-lang="fr" class="hero-eyebrow">Économiste de la Santé &amp; Data Analyst</div>
+      <div data-lang="en" class="hero-eyebrow">Health Economist &amp; Data Analyst</div>
+      
+      <h1>
+        <span data-lang="fr">Recherche, données &amp; <em>conception des systèmes de santé</em></span>
+        <span data-lang="en">Research, data &amp; <em>health systems design</em></span>
+      </h1>
+      
+      <p class="hero-bio" data-lang="fr">
         Économiste de la santé et analyste de données combinant un socle scientifique en biologie moléculaire et des compétences quantitatives appliquées (économétrie, modélisation bayésienne, machine learning). Formé à l'évaluation médico-économique, à l'analyse de données de santé et à la microéconomie de l'assurance, avec une expérience pratique en audit organisationnel et en gestion de projet. Recherche un stage conventionné (rythme alterné ou temps plein dès octobre 2026) afin d'apporter un appui analytique et stratégique sur des projets d'aide à la décision et de valorisation des données.
       </p>
+      <p class="hero-bio" data-lang="en">
+        Health economist and data analyst combining a scientific foundation in molecular biology with applied quantitative skills (econometrics, Bayesian modelling, machine learning). Trained in health economic evaluation, health data analysis, and microeconomic insurance theory, with hands-on experience in organizational audit and project management. Seeking an internship (alternating or full-time from October 2026) to deliver analytical and strategic support on decision-aid and data valorization projects.
+      </p>
+      
       <div class="hero-pills" style="margin-bottom: 2rem;">
-        <span class="pill">Autonomie &amp; auto-formation</span>
-        <span class="pill">Adaptabilité &amp; transversalité</span>
-        <span class="pill">Vulgarisation scientifique</span>
-        <span class="pill">Travail collaboratif pluridisciplinaire</span>
-        <span class="pill">Rigueur &amp; éthique scientifique</span>
-        <span class="pill">Gestion des priorités</span>
+        <span class="pill" data-lang="fr">Autonomie &amp; auto-formation</span>
+        <span class="pill" data-lang="en">Autonomy &amp; self-directed learning</span>
+        <span class="pill" data-lang="fr">Adaptabilité &amp; transversalité</span>
+        <span class="pill" data-lang="en">Adaptability &amp; cross-functional thinking</span>
+        <span class="pill" data-lang="fr">Vulgarisation scientifique</span>
+        <span class="pill" data-lang="en">Science communication</span>
+        <span class="pill" data-lang="fr">Travail collaboratif pluridisciplinaire</span>
+        <span class="pill" data-lang="en">Collaborative multidisciplinary teamwork</span>
+        <span class="pill" data-lang="fr">Rigueur &amp; éthique scientifique</span>
+        <span class="pill" data-lang="en">Scientific rigor &amp; ethics</span>
+        <span class="pill" data-lang="fr">Gestion des priorités</span>
+        <span class="pill" data-lang="en">Priority management</span>
       </div>
     </section>
 
     <!-- AVAILABILITY TIMELINE -->
     <div class="availability-timeline">
-      <div class="timeline-title">📅 Disponibilité &amp; Calendrier de Stage M2</div>
+      <div class="timeline-title" data-lang="fr">📅 Disponibilité &amp; Calendrier de Stage M2</div>
+      <div class="timeline-title" data-lang="en">📅 Availability &amp; Internship Schedule</div>
       
       <div class="timeline-option">
-        <div class="option-header">Option 1 : Stage Alterné (1er octobre 2026 – 30 juin 2027)</div>
-        <div class="timeline-detail">
+        <div class="option-header" data-lang="fr">Option 1 : Stage Alterné (1er octobre 2026 – 30 juin 2027)</div>
+        <div class="option-header" data-lang="en">Option 1: Alternating Internship (October 1, 2026 – June 30, 2027)</div>
+        <div class="timeline-detail" data-lang="fr">
           <strong>Octobre :</strong> Temps plein en entreprise<br>
           <strong>Novembre – Avril :</strong> Stage alterné – 2 semaines en entreprise + 2 semaines en formation<br>
           <strong>Mai – Juin :</strong> Temps plein en entreprise
         </div>
+        <div class="timeline-detail" data-lang="en">
+          <strong>October:</strong> Full-time in company<br>
+          <strong>November – April:</strong> Alternating – 2 weeks company + 2 weeks coursework<br>
+          <strong>May – June:</strong> Full-time in company
+        </div>
       </div>
 
       <div class="timeline-option">
-        <div class="option-header">Option 2 : Stage Temps Plein (Avril – Septembre 2027)</div>
-        <div class="timeline-detail">
+        <div class="option-header" data-lang="fr">Option 2 : Stage Temps Plein (Avril – Septembre 2027)</div>
+        <div class="option-header" data-lang="en">Option 2: Full-time Internship (April – September 2027)</div>
+        <div class="timeline-detail" data-lang="fr">
           <strong>Type :</strong> Stage de fin d'études<br>
           <strong>Format :</strong> Temps plein en entreprise
+        </div>
+        <div class="timeline-detail" data-lang="en">
+          <strong>Type:</strong> Final internship<br>
+          <strong>Format:</strong> Full-time in company
         </div>
       </div>
     </div>
@@ -321,18 +383,26 @@
     <!-- PROJETS -->
     <section id="projets">
       <div class="projects-intro">
-        <div class="projects-intro-title">Projets &amp; Travaux Quantitatifs</div>
-        <div class="projects-intro-desc">
-          Travaux appliqués et protocoles décisionnels combinant modélisation médico-économique (Markov, PSA), inférence causale sur bases médico-administratives (type SNDS), économétrie de panel et machine learning.
+        <div class="projects-intro-title" data-lang="fr">Projets &amp; Travaux Quantitatifs</div>
+        <div class="projects-intro-title" data-lang="en">Projects &amp; Quantitative Work</div>
+        <div class="projects-intro-desc" data-lang="fr">
+          Travaux appliqués et études en cours combinant économétrie de la santé, modélisation bayésienne, machine learning, évaluation médico-économique et analyse du risque assurantiel. Ce corpus regroupe des recherches académiques (M1 & M2), des collaborations hospitalières et de futurs projets d'analyse de données de santé.
+        </div>
+        <div class="projects-intro-desc" data-lang="en">
+          Applied work and ongoing studies combining health econometrics, Bayesian modelling, machine learning, health economic evaluation, and insurance risk analysis. This includes academic research (M1 & M2), hospital collaborations, and upcoming health data analysis projects.
         </div>
       </div>
 
       <!-- FILTER BUTTONS -->
       <div class="project-filters">
-        <button class="filter-btn active" onclick="filterProjects('all')">Tous les projets (8)</button>
-        <button class="filter-btn" onclick="filterProjects('heor')">Modélisation &amp; HTA (4)</button>
-        <button class="filter-btn" onclick="filterProjects('rwe')">Données Réelles &amp; RWE (2)</button>
-        <button class="filter-btn" onclick="filterProjects('policy')">Économétrie &amp; Politiques (2)</button>
+        <button class="filter-btn active" onclick="filterProjects('all')" data-lang="fr">Tous les projets (8)</button>
+        <button class="filter-btn active" onclick="filterProjects('all')" data-lang="en">All projects (8)</button>
+        <button class="filter-btn" onclick="filterProjects('heor')" data-lang="fr">Modélisation &amp; HTA (4)</button>
+        <button class="filter-btn" onclick="filterProjects('heor')" data-lang="en">Modelling &amp; HTA (4)</button>
+        <button class="filter-btn" onclick="filterProjects('rwe')" data-lang="fr">Données Réelles &amp; RWE (2)</button>
+        <button class="filter-btn" onclick="filterProjects('rwe')" data-lang="en">Real-World Data &amp; RWE (2)</button>
+        <button class="filter-btn" onclick="filterProjects('policy')" data-lang="fr">Économétrie &amp; Politiques (2)</button>
+        <button class="filter-btn" onclick="filterProjects('policy')" data-lang="en">Econometrics &amp; Policy (2)</button>
       </div>
 
       <div class="projects-grid">
@@ -341,17 +411,24 @@
         <div class="project-card" data-category="heor">
           <div class="project-top">
             <div>
-              <div class="project-name">Modélisation de l'Efficience Décisionnelle Post-SCA</div>
-              <div class="project-year">Projet M2S2, 2027</div>
+              <div class="project-name" data-lang="fr">Modélisation de l'Efficience Décisionnelle Post-SCA</div>
+              <div class="project-name" data-lang="en">Decision Efficiency Modelling Post-ACS</div>
+              <div class="project-year" data-lang="fr">Projet M2S2, 2027</div>
+              <div class="project-year" data-lang="en">Project M2S2, 2027</div>
             </div>
             <span class="project-lang">R • Markov</span>
           </div>
-          <p class="project-desc">Modélisation médico-économique comparant un programme de suivi renforcé post-SCA au suivi standard sur 5 ans. Modèle de Markov à 5 états avec cycles trimestriels, matrices de transition dynamiques et actualisation (2,5 %).</p>
-          <div class="project-details">
+          <p class="project-desc" data-lang="fr">Modélisation médico-économique comparant un programme de suivi renforcé post-SCA au suivi standard sur 5 ans. Modèle de Markov à 5 états avec cycles trimestriels, matrices de transition dynamiques et actualisation (2,5 %).</p>
+          <p class="project-desc" data-lang="en">Health economic modelling comparing intensive post-ACS follow-up programme to standard follow-up over 5 years. 5-state Markov model with quarterly cycles, dynamic transition matrices and discounting (2.5%).</p>
+          <div class="project-details" data-lang="fr">
             <strong>Analyses :</strong> CEA/CUA déterministe, calcul ICER et bénéfice monétaire net incrémental (iNMB sous 20k€, 30k€ et 50k€/QALY). Analyses de scénarios et validation interne.
           </div>
+          <div class="project-details" data-lang="en">
+            <strong>Analyses:</strong> Deterministic CEA/CUA, ICER and incremental net monetary benefit (iNMB at €20k, €30k and €50k/QALY thresholds). Scenario analyses and internal validation.
+          </div>
           <div class="project-tags">
-            <span class="tag-upcoming">⏳ En cours</span>
+            <span class="tag-upcoming" data-lang="fr">⏳ En cours</span>
+            <span class="tag-upcoming" data-lang="en">⏳ Ongoing</span>
             <span class="tag">Markov</span>
             <span class="tag">HEOR</span>
           </div>
@@ -361,17 +438,24 @@
         <div class="project-card" data-category="heor">
           <div class="project-top">
             <div>
-              <div class="project-name">Quantification de l'Incertitude : Monte Carlo &amp; Bootstrap</div>
-              <div class="project-year">Projet M2S1, 2026</div>
+              <div class="project-name" data-lang="fr">Quantification de l'Incertitude : Monte Carlo &amp; Bootstrap</div>
+              <div class="project-name" data-lang="en">Uncertainty Quantification: Monte Carlo &amp; Bootstrap</div>
+              <div class="project-year" data-lang="fr">Projet M2S1, 2026</div>
+              <div class="project-year" data-lang="en">Project M2S1, 2026</div>
             </div>
             <span class="project-lang">R • PSA</span>
           </div>
-          <p class="project-desc">Analyse de sensibilité probabiliste approfondie sur la prise en charge post-SCA, confrontant approches paramétriques et non paramétriques sur 5 000 réplications.</p>
-          <div class="project-details">
+          <p class="project-desc" data-lang="fr">Analyse de sensibilité probabiliste approfondie sur la prise en charge post-SCA, confrontant approches paramétriques et non paramétriques sur 5 000 réplications.</p>
+          <p class="project-desc" data-lang="en">In-depth probabilistic sensitivity analysis on post-ACS management, comparing parametric and non-parametric approaches across 5,000 replications.</p>
+          <div class="project-details" data-lang="fr">
             <strong>Méthodes :</strong> PSA paramétrique (Beta, Gamma, Log-normale) et bootstrap non paramétrique ré-échantillonnant les trajectoires. Plans coût-efficacité, courbes d'acceptabilité (CEAC) et EVPI.
           </div>
+          <div class="project-details" data-lang="en">
+            <strong>Methods:</strong> Parametric PSA (Beta, Gamma, Log-normal) and non-parametric bootstrap resampling trajectories. Cost-effectiveness planes, acceptability curves (CEAC) and EVPI.
+          </div>
           <div class="project-tags">
-            <span class="tag-upcoming">⏳ En cours</span>
+            <span class="tag-upcoming" data-lang="fr">⏳ En cours</span>
+            <span class="tag-upcoming" data-lang="en">⏳ Ongoing</span>
             <span class="tag">Monte Carlo</span>
             <span class="tag">CEAC</span>
           </div>
@@ -381,17 +465,24 @@
         <div class="project-card" data-category="heor">
           <div class="project-top">
             <div>
-              <div class="project-name">Protocole BIA : Évaluation Ex Ante de l'Impact Budgétaire</div>
-              <div class="project-year">Projet M2S1, 2026</div>
+              <div class="project-name" data-lang="fr">Protocole BIA : Évaluation Ex Ante de l'Impact Budgétaire</div>
+              <div class="project-name" data-lang="en">BIA Protocol: Ex Ante Budget Impact Assessment</div>
+              <div class="project-year" data-lang="fr">Projet M2S1, 2026</div>
+              <div class="project-year" data-lang="en">Project M2S1, 2026</div>
             </div>
             <span class="project-lang">AIB • HAS</span>
           </div>
-          <p class="project-desc">Rédaction d'un protocole d'analyse d'impact budgétaire selon les exigences méthodologiques de la HAS pour l'introduction d'une technologie diagnostique en parcours SCA.</p>
-          <div class="project-details">
-            <strong>Cadrage :</strong> Perspective Assurance maladie, dimensionnement population cible, modélisation des parts de marché et taux de pénétration sur 3-5 ans, calcul des coûts différentiels.
+          <p class="project-desc" data-lang="fr">Rédaction d'un protocole d'analyse d'impact budgétaire selon les exigences méthodologiques de la HAS pour l'introduction d'une technologie diagnostique innovante.</p>
+          <p class="project-desc" data-lang="en">Writing a budget impact analysis protocol meeting HAS methodological requirements for introducing an innovative diagnostic technology.</p>
+          <div class="project-details" data-lang="fr">
+            <strong>Cadrage :</strong> Perspective Assurance maladie, dimensionnement population cible, modélisation parts de marché et taux de pénétration sur 3-5 ans, calcul coûts différentiels.
+          </div>
+          <div class="project-details" data-lang="en">
+            <strong>Scope:</strong> Health insurance perspective, target population sizing, market share and penetration rate modelling over 3-5 years, incremental cost calculation.
           </div>
           <div class="project-tags">
-            <span class="tag-upcoming">⏳ En cours</span>
+            <span class="tag-upcoming" data-lang="fr">⏳ En cours</span>
+            <span class="tag-upcoming" data-lang="en">⏳ Ongoing</span>
             <span class="tag">Impact Budgétaire</span>
             <span class="tag">HAS</span>
           </div>
@@ -401,23 +492,32 @@
         <div class="project-card" data-category="heor">
           <div class="project-top">
             <div>
-              <div class="project-name">Méta-Analyse en Réseau : Ulcère Veineux</div>
-              <div class="project-year">Projet M1, 2026</div>
+              <div class="project-name" data-lang="fr">Méta-Analyse en Réseau : Traitement de l'Ulcère Veineux</div>
+              <div class="project-name" data-lang="en">Network Meta-Analysis: Venous Ulcer Treatment</div>
+              <div class="project-year" data-lang="fr">Projet M1, 2026</div>
+              <div class="project-year" data-lang="en">Project M1, 2026</div>
             </div>
             <span class="project-lang">R • WinBUGS</span>
           </div>
-          <p class="project-desc">Synthèse bayésienne hiérarchique en réseau de 15 essais cliniques randomisés comparant 6 stratégies thérapeutiques. Modèles à effets aléatoires via MCMC.</p>
-          <div class="project-details">
-            <strong>Résultats :</strong> Thérapie laser : SUCRA 75 %, OR = 2,45 [ICr 95% : 1,15 ; 5,20]. Convergence MCMC évaluée, hétérogénéité (I² = 46 %).
+          <p class="project-desc" data-lang="fr">Synthèse bayésienne hiérarchique en réseau de 15 essais cliniques randomisés comparant 6 stratégies thérapeutiques. Modèles à effets aléatoires via MCMC.</p>
+          <p class="project-desc" data-lang="en">Hierarchical Bayesian network synthesis of 15 RCTs comparing 6 treatment strategies. Random-effects models via MCMC.</p>
+          <div class="project-details" data-lang="fr">
+            <strong>Résultats :</strong> Thérapie laser : SUCRA 75%, OR = 2,45 [ICr 95% : 1,15 ; 5,20]. Convergence MCMC évaluée, hétérogénéité (I² = 46%).
+          </div>
+          <div class="project-details" data-lang="en">
+            <strong>Results:</strong> Laser therapy: SUCRA 75%, OR = 2.45 [95% CrI: 1.15; 5.20]. MCMC convergence assessed, heterogeneity (I² = 46%).
           </div>
           <div class="project-tags">
-            <span class="tag-complete">✓ Complet</span>
-            <span class="tag">Bayésienne</span>
+            <span class="tag-complete" data-lang="fr">✓ Complet</span>
+            <span class="tag-complete" data-lang="en">✓ Complete</span>
+            <span class="tag">Bayesian</span>
             <span class="tag">NMA</span>
           </div>
           <div class="project-links">
-            <a href="2_venous_ulcers_nma/" class="project-link">Voir sur GitHub</a>
-            <a href="2_venous_ulcers_nma/paper/BAKHOUM_WILLIAMS_Projet_Meta_Rapport.pdf" class="project-link">Rapport PDF</a>
+            <a href="2_venous_ulcers_nma/" class="project-link" data-lang="fr">Voir sur GitHub</a>
+            <a href="2_venous_ulcers_nma/" class="project-link" data-lang="en">View on GitHub</a>
+            <a href="2_venous_ulcers_nma/paper/BAKHOUM_WILLIAMS_Projet_Meta_Rapport.pdf" class="project-link" data-lang="fr">Rapport PDF</a>
+            <a href="2_venous_ulcers_nma/paper/BAKHOUM_WILLIAMS_Projet_Meta_Rapport.pdf" class="project-link" data-lang="en">PDF Report</a>
           </div>
         </div>
 
@@ -425,17 +525,24 @@
         <div class="project-card" data-category="rwe">
           <div class="project-top">
             <div>
-              <div class="project-name">Évaluation Ex Post &amp; Inférence Causale (SNDS)</div>
-              <div class="project-year">Projet M2S2, 2027</div>
+              <div class="project-name" data-lang="fr">Évaluation Ex Post &amp; Inférence Causale (SNDS)</div>
+              <div class="project-name" data-lang="en">Ex Post Evaluation &amp; Causal Inference (SNDS)</div>
+              <div class="project-year" data-lang="fr">Projet M2S2, 2027</div>
+              <div class="project-year" data-lang="en">Project M2S2, 2027</div>
             </div>
             <span class="project-lang">R • IPTW</span>
           </div>
-          <p class="project-desc">Évaluation médico-économique observationnelle rétrospective sur données synthétiques type SNDS. Émulation d'essai cible avec design landmark J30.</p>
-          <div class="project-details">
-            <strong>Méthodes :</strong> Score de propension, IPTW stabilisée (ATE), vérification équilibre (SMD &lt; 0,10). Coûts par GLM pondéré, risques MACE évités, analyse coût-utilité hybride.
+          <p class="project-desc" data-lang="fr">Évaluation médico-économique observationnelle rétrospective sur données synthétiques type SNDS. Émulation d'essai cible avec design landmark J30.</p>
+          <p class="project-desc" data-lang="en">Retrospective observational health economic evaluation on synthetic SNDS-type data. Target trial emulation with day-30 landmark design.</p>
+          <div class="project-details" data-lang="fr">
+            <strong>Méthodes :</strong> Score de propension, IPTW stabilisée (ATE), vérification équilibre (SMD &lt;0,10). Coûts par GLM pondéré, risques MACE évités, analyse coût-utilité hybride.
+          </div>
+          <div class="project-details" data-lang="en">
+            <strong>Methods:</strong> Propensity score, stabilized IPTW (ATE), balance assessment (SMD &lt;0.10). Costs via weighted GLM, MACE risks averted, hybrid cost-utility analysis.
           </div>
           <div class="project-tags">
-            <span class="tag-upcoming">⏳ En cours</span>
+            <span class="tag-upcoming" data-lang="fr">⏳ En cours</span>
+            <span class="tag-upcoming" data-lang="en">⏳ Ongoing</span>
             <span class="tag">SNDS</span>
             <span class="tag">IPTW</span>
             <span class="tag">RWE</span>
@@ -446,19 +553,26 @@
         <div class="project-card" data-category="rwe">
           <div class="project-top">
             <div>
-              <div class="project-name">Audit Organisationnel &amp; Évaluation de Scénarios</div>
-              <div class="project-year">Mémoire Stage M1, 2026</div>
+              <div class="project-name" data-lang="fr">Audit Organisationnel &amp; Évaluation de Scénarios</div>
+              <div class="project-name" data-lang="en">Organizational Audit &amp; Scenario Evaluation</div>
+              <div class="project-year" data-lang="fr">Mémoire Stage M1, 2026</div>
+              <div class="project-year" data-lang="en">M1 Internship Thesis, 2026</div>
             </div>
-            <span class="project-lang">Méthodes Mixtes • Excel</span>
+            <span class="project-lang">Mixed Methods • Excel</span>
           </div>
-          <p class="project-desc">Étude organisationnelle à méthodes mixtes (cycle NICE/CHI) pour modéliser flux patients et évaluer scénarios réorganisation sous contraintes capacitaires. Loi de Little et théorie des contraintes.</p>
-          <div class="project-details">
+          <p class="project-desc" data-lang="fr">Étude organisationnelle à méthodes mixtes (cycle NICE/CHI) pour modéliser flux patients et évaluer scénarios réorganisation sous contraintes capacitaires. Loi de Little et théorie des contraintes.</p>
+          <p class="project-desc" data-lang="en">Mixed-methods organizational study (NICE/CHI cycle) to model patient flows and evaluate reorganization scenarios under capacity constraints. Little's Law and Theory of Constraints.</p>
+          <div class="project-details" data-lang="fr">
             <strong>Méthodes :</strong> Triangulation (données d'activité, enquête 13 cliniciens, entretiens semi-structurés, benchmarking NCCN). Évaluation 7 scénarios, tableau de bord KPI automatisé Excel.
           </div>
+          <div class="project-details" data-lang="en">
+            <strong>Methods:</strong> Triangulation (activity data, 13-clinician survey, semi-structured interviews, NCCN benchmarking). Evaluation of 7 scenarios, automated Excel KPI dashboard.
+          </div>
           <div class="project-tags">
-            <span class="tag-complete">✓ Réalisé</span>
+            <span class="tag-complete" data-lang="fr">✓ Réalisé</span>
+            <span class="tag-complete" data-lang="en">✓ Completed</span>
             <span class="tag">Audit</span>
-            <span class="tag">Files d'Attente</span>
+            <span class="tag">Queuing</span>
           </div>
         </div>
 
@@ -466,23 +580,32 @@
         <div class="project-card" data-category="policy">
           <div class="project-top">
             <div>
-              <div class="project-name">Déterminants Espérance de Vie OCDE</div>
-              <div class="project-year">Projet M1, 2026</div>
+              <div class="project-name" data-lang="fr">Déterminants Espérance de Vie OCDE</div>
+              <div class="project-name" data-lang="en">Life Expectancy Determinants in the OECD</div>
+              <div class="project-year" data-lang="fr">Projet M1, 2026</div>
+              <div class="project-year" data-lang="en">Project M1, 2026</div>
             </div>
             <span class="project-lang">Python • R</span>
           </div>
-          <p class="project-desc">Analyse exploratoire et modélisation économétrique des déterminants sanitaires, économiques et environnementaux sur 38 pays OCDE.</p>
-          <div class="project-details">
-            <strong>Méthodes :</strong> ACP, clustering non supervisé, régression multiple (R² = 0,43). Dépenses santé en % PIB : prédicteur majeur (p &lt; 0,01).
+          <p class="project-desc" data-lang="fr">Analyse exploratoire et modélisation économétrique des déterminants sanitaires, économiques et environnementaux sur 38 pays OCDE.</p>
+          <p class="project-desc" data-lang="en">Exploratory analysis and econometric modelling of health, economic and environmental determinants across 38 OECD countries.</p>
+          <div class="project-details" data-lang="fr">
+            <strong>Méthodes :</strong> ACP, clustering non supervisé, régression multiple (R² = 0,43). Dépenses santé en % PIB : prédicteur majeur (p &lt;0,01).
+          </div>
+          <div class="project-details" data-lang="en">
+            <strong>Methods:</strong> PCA, unsupervised clustering, multiple regression (R² = 0.43). Health spending as % GDP: major predictor (p &lt;0.01).
           </div>
           <div class="project-tags">
-            <span class="tag-complete">✓ Complet</span>
-            <span class="tag">Économétrie</span>
-            <span class="tag">ACP</span>
+            <span class="tag-complete" data-lang="fr">✓ Complet</span>
+            <span class="tag-complete" data-lang="en">✓ Complete</span>
+            <span class="tag">Econometrics</span>
+            <span class="tag">PCA</span>
           </div>
           <div class="project-links">
-            <a href="data_visualization/" class="project-link">Voir sur GitHub</a>
-            <a href="data_visualization/BAKHOUM_WILLIAMS_Projet_Visualisation_M1SANTE.pdf" class="project-link">Rapport PDF</a>
+            <a href="data_visualization/" class="project-link" data-lang="fr">Voir sur GitHub</a>
+            <a href="data_visualization/" class="project-link" data-lang="en">View on GitHub</a>
+            <a href="data_visualization/BAKHOUM_WILLIAMS_Projet_Visualisation_M1SANTE.pdf" class="project-link" data-lang="fr">Rapport PDF</a>
+            <a href="data_visualization/BAKHOUM_WILLIAMS_Projet_Visualisation_M1SANTE.pdf" class="project-link" data-lang="en">PDF Report</a>
           </div>
         </div>
 
@@ -490,22 +613,30 @@
         <div class="project-card" data-category="policy">
           <div class="project-top">
             <div>
-              <div class="project-name">Architecture du Financement &amp; Résultats de Santé en Amérique Latine et Caraïbes</div>
-              <div class="project-year">Recherche Collaborative, 2026</div>
+              <div class="project-name" data-lang="fr">Financement &amp; Résultats Santé LAC</div>
+              <div class="project-name" data-lang="en">Financing &amp; Health Outcomes in LAC</div>
+              <div class="project-year" data-lang="fr">Recherche Collaborative, 2026</div>
+              <div class="project-year" data-lang="en">Collaborative Research, 2026</div>
             </div>
             <span class="project-lang">R • Panel</span>
           </div>
-          <p class="project-desc">Étude économétrique comparative sur données de panel de 31 pays LAC (2015–2022) examinant impact des mécanismes de financement.</p>
-          <div class="project-details">
-            <strong>Résultats :</strong> Test Hausman rejette effets aléatoires (χ² = 45,03, p &lt; 0,001). Quantification élasticité espérance de vie aux dépenses santé.
+          <p class="project-desc" data-lang="fr">Étude économétrique comparative sur données de panel de 31 pays LAC (2015–2022) examinant impact des mécanismes de financement.</p>
+          <p class="project-desc" data-lang="en">Comparative econometric study on panel data from 31 LAC countries (2015–2022) examining impact of financing mechanisms.</p>
+          <div class="project-details" data-lang="fr">
+            <strong>Résultats :</strong> Test Hausman rejette effets aléatoires (χ² = 45,03, p &lt;0,001). Quantification élasticité espérance de vie aux dépenses santé.
+          </div>
+          <div class="project-details" data-lang="en">
+            <strong>Results:</strong> Hausman test rejects random effects (χ² = 45.03, p &lt;0.001). Elasticity of life expectancy to health spending quantified.
           </div>
           <div class="project-tags">
-            <span class="tag-complete">✓ En cours</span>
-            <span class="tag">Panel</span>
-            <span class="tag">Financement</span>
+            <span class="tag-complete" data-lang="fr">✓ En cours</span>
+            <span class="tag-complete" data-lang="en">✓ Ongoing</span>
+            <span class="tag">Panel Data</span>
+            <span class="tag">Financing</span>
           </div>
           <div class="project-links">
-            <a href="1_caribbean_health_financing/" class="project-link">Voir sur GitHub</a>
+            <a href="1_caribbean_health_financing/" class="project-link" data-lang="fr">Voir sur GitHub</a>
+            <a href="1_caribbean_health_financing/" class="project-link" data-lang="en">View on GitHub</a>
           </div>
         </div>
 
@@ -515,104 +646,134 @@
     <!-- COMPETENCES -->
     <section id="competences" class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Compétences Techniques</h2>
+        <h2 class="section-title" data-lang="fr">Compétences Techniques</h2>
+        <h2 class="section-title" data-lang="en">Technical Skills</h2>
       </div>
       <div class="skills-grid">
         <div class="skill-card">
           <div class="skill-top">
             <span class="skill-name">R (Tidyverse, ggplot2, plm)</span>
-            <span class="skill-level">Avancé</span>
+            <span class="skill-level" data-lang="fr">Avancé</span>
+            <span class="skill-level" data-lang="en">Advanced</span>
           </div>
           <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
         </div>
         <div class="skill-card">
           <div class="skill-top">
             <span class="skill-name">Excel / VBA</span>
-            <span class="skill-level">Avancé</span>
+            <span class="skill-level" data-lang="fr">Avancé</span>
+            <span class="skill-level" data-lang="en">Advanced</span>
           </div>
           <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
         </div>
         <div class="skill-card">
           <div class="skill-top">
             <span class="skill-name">Power BI</span>
-            <span class="skill-level">Intermédiaire</span>
+            <span class="skill-level" data-lang="fr">Intermédiaire</span>
+            <span class="skill-level" data-lang="en">Intermediate</span>
           </div>
           <div class="skill-bar"><div class="skill-fill" style="width: 72%;"></div></div>
         </div>
         <div class="skill-card">
           <div class="skill-top">
             <span class="skill-name">Python</span>
-            <span class="skill-level">Intermédiaire</span>
+            <span class="skill-level" data-lang="fr">Intermédiaire</span>
+            <span class="skill-level" data-lang="en">Intermediate</span>
           </div>
           <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
         </div>
         <div class="skill-card">
           <div class="skill-top">
             <span class="skill-name">SAS</span>
-            <span class="skill-level">Intermédiaire</span>
+            <span class="skill-level" data-lang="fr">Intermédiaire</span>
+            <span class="skill-level" data-lang="en">Intermediate</span>
           </div>
           <div class="skill-bar"><div class="skill-fill" style="width: 72%;"></div></div>
         </div>
         <div class="skill-card">
           <div class="skill-top">
             <span class="skill-name">WinBUGS</span>
-            <span class="skill-level">Appliqué</span>
+            <span class="skill-level" data-lang="fr">Appliqué</span>
+            <span class="skill-level" data-lang="en">Applied</span>
           </div>
           <div class="skill-bar"><div class="skill-fill" style="width: 70%;"></div></div>
         </div>
         <div class="skill-card">
           <div class="skill-top">
             <span class="skill-name">SQL</span>
-            <span class="skill-level">Intermédiaire</span>
+            <span class="skill-level" data-lang="fr">Intermédiaire</span>
+            <span class="skill-level" data-lang="en">Intermediate</span>
           </div>
           <div class="skill-bar"><div class="skill-fill" style="width: 70%;"></div></div>
         </div>
         <div class="skill-card">
           <div class="skill-top">
             <span class="skill-name">Git &amp; GitHub</span>
-            <span class="skill-level">Appliqué</span>
+            <span class="skill-level" data-lang="fr">Appliqué</span>
+            <span class="skill-level" data-lang="en">Applied</span>
           </div>
           <div class="skill-bar"><div class="skill-fill" style="width: 78%;"></div></div>
         </div>
       </div>
 
-      <h3 style="font-family: var(--serif); font-size: 1.4rem; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--ink); font-weight: 600;">Domaines d'Application</h3>
+      <h3 style="font-family: var(--serif); font-size: 1.4rem; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--ink); font-weight: 600;">
+        <span data-lang="fr">Domaines d'Application</span>
+        <span data-lang="en">Application Domains</span>
+      </h3>
       <div class="domain-grid">
         <div class="domain-card">
-          <div class="domain-label">Évaluation Médico-Économique</div>
-          <div class="domain-desc">Analyse coût-efficacité (CEA), coût-utilité (CUA), analyse d'impact budgétaire, modèles décisionnels</div>
+          <div class="domain-label" data-lang="fr">Évaluation Médico-Économique</div>
+          <div class="domain-label" data-lang="en">Health Economic Evaluation</div>
+          <div class="domain-desc" data-lang="fr">Analyse coût-efficacité (CEA), coût-utilité (CUA), analyse d'impact budgétaire, modèles décisionnels</div>
+          <div class="domain-desc" data-lang="en">Cost-effectiveness analysis (CEA), cost-utility (CUA), budget impact analysis, decision models</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">HTA &amp; Accès au Marché</div>
-          <div class="domain-desc">Dossiers HAS, réglementation HTA européenne, dossiers de transparence, positionnement santé</div>
+          <div class="domain-label" data-lang="fr">HTA &amp; Accès au Marché</div>
+          <div class="domain-label" data-lang="en">HTA &amp; Market Access</div>
+          <div class="domain-desc" data-lang="fr">Dossiers HAS, réglementation HTA européenne, dossiers de transparence, positionnement santé</div>
+          <div class="domain-desc" data-lang="en">HAS submissions, European HTA regulation, transparency files, health positioning</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Politique Publique &amp; Financement</div>
-          <div class="domain-desc">Évaluation des politiques publiques, financement des systèmes de santé, analyse comparative internationale</div>
+          <div class="domain-label" data-lang="fr">Politique Publique &amp; Financement</div>
+          <div class="domain-label" data-lang="en">Public Policy &amp; Financing</div>
+          <div class="domain-desc" data-lang="fr">Évaluation des politiques publiques, financement des systèmes de santé, analyse comparative internationale</div>
+          <div class="domain-desc" data-lang="en">Public policy evaluation, health system financing, international comparative analysis</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Microéconomie de l'Assurance</div>
-          <div class="domain-desc">Économie de la protection sociale, gestion des risques, assurance-maladie</div>
+          <div class="domain-label" data-lang="fr">Microéconomie de l'Assurance</div>
+          <div class="domain-label" data-lang="en">Insurance Microeconomics</div>
+          <div class="domain-desc" data-lang="fr">Économie de la protection sociale, gestion des risques, assurance-maladie</div>
+          <div class="domain-desc" data-lang="en">Social protection economics, risk management, health insurance</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Modélisation &amp; Inférence</div>
-          <div class="domain-desc">Arbres de décision, modèles de Markov, NMA bayésienne, méthodes de Monte Carlo, MCMC</div>
+          <div class="domain-label" data-lang="fr">Modélisation &amp; Inférence</div>
+          <div class="domain-label" data-lang="en">Modelling &amp; Inference</div>
+          <div class="domain-desc" data-lang="fr">Arbres de décision, modèles de Markov, NMA bayésienne, méthodes de Monte Carlo, MCMC</div>
+          <div class="domain-desc" data-lang="en">Decision trees, Markov models, Bayesian NMA, Monte Carlo methods, MCMC</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Data Science &amp; Evidence Synthesis</div>
-          <div class="domain-desc">Classification supervisée, prédiction, analyses de panel, big data, synthèse d'évidences</div>
+          <div class="domain-label" data-lang="fr">Data Science &amp; Evidence Synthesis</div>
+          <div class="domain-label" data-lang="en">Data Science &amp; Evidence Synthesis</div>
+          <div class="domain-desc" data-lang="fr">Classification supervisée, prédiction, analyses de panel, big data, synthèse d'évidences</div>
+          <div class="domain-desc" data-lang="en">Supervised classification, prediction, panel analyses, big data, evidence synthesis</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Biotechnologies &amp; Santé-Environnement</div>
-          <div class="domain-desc">Microbiologie appliquée, prévention sanitaire, risques professionnels, enseignement en santé</div>
+          <div class="domain-label" data-lang="fr">Biotechnologies &amp; Santé-Environnement</div>
+          <div class="domain-label" data-lang="en">Biotechnology &amp; Environmental Health</div>
+          <div class="domain-desc" data-lang="fr">Microbiologie appliquée, prévention sanitaire, risques professionnels, enseignement en santé</div>
+          <div class="domain-desc" data-lang="en">Applied microbiology, health prevention, occupational risks, health education</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Organisation des Soins &amp; Épidémiologie Quantitative</div>
-          <div class="domain-desc">Audit organisationnel, optimisation des flux hospitaliers, analyse de survie, disparités spatiales de santé, santé et vieillissement</div>
+          <div class="domain-label" data-lang="fr">Organisation des Soins &amp; Épidémiologie Quantitative</div>
+          <div class="domain-label" data-lang="en">Healthcare Organization &amp; Quantitative Epidemiology</div>
+          <div class="domain-desc" data-lang="fr">Audit organisationnel, optimisation des flux hospitaliers, analyse de survie, disparités spatiales de santé, santé et vieillissement</div>
+          <div class="domain-desc" data-lang="en">Organizational audit, hospital flow optimization, survival analysis, spatial health disparities, ageing and health</div>
         </div>
         <div class="domain-card">
-          <div class="domain-label">Gouvernance des Données &amp; Outils Décisionnels</div>
-          <div class="domain-desc">Conformité RGPD en santé, gestion de bases de données relationnelles (SQL), création d'interfaces et macros (VBA), traçabilité et assurance qualité</div>
+          <div class="domain-label" data-lang="fr">Gouvernance des Données &amp; Outils Décisionnels</div>
+          <div class="domain-label" data-lang="en">Data Governance &amp; Decision Tools</div>
+          <div class="domain-desc" data-lang="fr">Conformité RGPD en santé, gestion de bases de données relationnelles (SQL), création d'interfaces et macros (VBA), traçabilité et assurance qualité</div>
+          <div class="domain-desc" data-lang="en">GDPR compliance in health, relational database management (SQL), interface and macro creation (VBA), traceability and quality assurance</div>
         </div>
       </div>
     </section>
@@ -620,18 +781,25 @@
     <!-- FORMATION -->
     <section id="formation" class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Formation</h2>
+        <h2 class="section-title" data-lang="fr">Formation</h2>
+        <h2 class="section-title" data-lang="en">Education</h2>
       </div>
       <div class="edu-list">
 
         <div class="edu-item">
           <div class="edu-year">2025 – 2027</div>
           <div>
-            <div class="edu-degree">Master Économie de la Santé</div>
-            <div class="edu-inst">Université Le Mans</div>
-            <div class="edu-detail">
+            <div class="edu-degree" data-lang="fr">Master Économie de la Santé</div>
+            <div class="edu-degree" data-lang="en">Master's in Health Economics</div>
+            <div class="edu-inst" data-lang="fr">Université Le Mans</div>
+            <div class="edu-inst" data-lang="en">Le Mans University</div>
+            <div class="edu-detail" data-lang="fr">
               <strong>M1 Validé (2025-2026) :</strong> Python · R · SAS · VBA · Visualisation de données · Big Data · Économétrie · Biostatistique &amp; analyse de survie · Économie du risque · Macroéconomie de la santé · Droit des données RGPD · Data mining · Essais cliniques · Méta-analyses en réseau · Modèles épidémiologie · Économie de la santé 1 · Microéconomie de l'assurance · Économie de la protection sociale
               <br><strong>M2 En Cours (2026-2027) :</strong> Évaluation politiques publiques · Méthodes de Monte Carlo · Évaluation ex ante efficience &amp; impact budgétaire · Économie de la santé 2 · Santé et vieillissement · Financement systèmes santé · Machine learning Python · Économétrie spatiale · Analyse de survie · Big data Python · English for Health Economics · Interface VBA · SQL SAS · Modélisation médico-économique · Microéconomie assurance approfondie · Évaluation ex post stratégies santé · Santé publique · Stage alterné
+            </div>
+            <div class="edu-detail" data-lang="en">
+              <strong>M1 Completed (2025-2026):</strong> Python · R · SAS · VBA · Data visualization · Big Data · Econometrics · Biostatistics &amp; survival analysis · Economics of risk · Health macroeconomics · Data law &amp; GDPR · Data mining · Clinical trials · Network meta-analyses · Epidemiological models · Health economics 1 · Insurance microeconomics · Social protection economics
+              <br><strong>M2 Ongoing (2026-2027):</strong> Public policy evaluation · Monte Carlo methods · Ex ante efficiency &amp; budget impact evaluation · Health economics 2 · Ageing and health · Health system financing · Python machine learning · Spatial econometrics · Survival analysis · Big data Python · English for Health Economics · VBA interface · SQL SAS · Health economic modelling · Advanced insurance microeconomics · Ex post health strategy evaluation · Public health · Internship
             </div>
           </div>
         </div>
@@ -639,18 +807,24 @@
         <div class="edu-item">
           <div class="edu-year">2024 – 2026</div>
           <div>
-            <div class="edu-degree">Master MEEF — Biotechnologies Santé Environnement</div>
-            <div class="edu-inst">Université Claude Bernard Lyon 1</div>
-            <div class="edu-detail">Sciences Médico-Sociales · Microbiologie Appliquée · Biochimie · PSE · Didactique · Méthodologie Scientifique · Gestion Projets. Qualification : CAP Agent Propreté Hygiène (APH), Bac Pro Hygiène Propreté Stérilisation (HPS), Bac Pro ASSP.</div>
+            <div class="edu-degree" data-lang="fr">Master MEEF — Biotechnologies Santé Environnement</div>
+            <div class="edu-degree" data-lang="en">Master's MEEF — Biotechnology &amp; Environmental Health</div>
+            <div class="edu-inst" data-lang="fr">Université Claude Bernard Lyon 1</div>
+            <div class="edu-inst" data-lang="en">Claude Bernard Lyon 1 University</div>
+            <div class="edu-detail" data-lang="fr">Sciences Médico-Sociales · Microbiologie Appliquée · Biochimie · PSE · Didactique · Méthodologie Scientifique · Gestion Projets. Qualification : CAP Agent Propreté Hygiène (APH), Bac Pro Hygiène Propreté Stérilisation (HPS), Bac Pro ASSP.</div>
+            <div class="edu-detail" data-lang="en">Medico-Social Sciences · Applied Microbiology · Biochemistry · Occupational Health &amp; Safety · Didactics · Scientific Methodology · Project Management. Qualified to teach: CAP Cleaning and Hygiene Technician, Vocational Baccalaureate in Hygiene &amp; Sterilization, Vocational Baccalaureate in Care Services.</div>
           </div>
         </div>
 
         <div class="edu-item">
           <div class="edu-year">2018 – 2021</div>
           <div>
-            <div class="edu-degree">Licence Biologie Moléculaire (Option Économie)</div>
-            <div class="edu-inst">University of the West Indies, Mona — Kingston</div>
-            <div class="edu-detail">Biochimie (Bioénergétique, Biochimie Cellulaire) · Biologie Moléculaire · Biotechnologie · Microbiologie · Épidémiologie &amp; Biostatistiques · Chimie · Pratiques Laboratoire · Human Molecular Biology · Microéconomie &amp; Macroéconomie · Mathématiques Sciences Sociales · Méthodologie Recherche</div>
+            <div class="edu-degree" data-lang="fr">Licence Biologie Moléculaire (Option Économie)</div>
+            <div class="edu-degree" data-lang="en">Bachelor's Molecular Biology (Economics Option)</div>
+            <div class="edu-inst" data-lang="fr">University of the West Indies, Mona — Kingston</div>
+            <div class="edu-inst" data-lang="en">University of the West Indies, Mona — Kingston</div>
+            <div class="edu-detail" data-lang="fr">Biochimie (Bioénergétique, Biochimie Cellulaire) · Biologie Moléculaire · Biotechnologie · Microbiologie · Épidémiologie &amp; Biostatistiques · Chimie · Pratiques Laboratoire · Human Molecular Biology · Microéconomie &amp; Macroéconomie · Mathématiques Sciences Sociales · Méthodologie Recherche</div>
+            <div class="edu-detail" data-lang="en">Biochemistry (Bioenergetics, Cellular Biochemistry) · Molecular Biology · Biotechnology · Microbiology · Epidemiology &amp; Biostatistics · Chemistry · Laboratory Practice · Human Molecular Biology · Micro- &amp; Macroeconomics · Mathematics for Social Sciences · Research Methodology</div>
           </div>
         </div>
 
@@ -660,43 +834,56 @@
     <!-- EXPERIENCE -->
     <section id="experience" class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Expérience</h2>
+        <h2 class="section-title" data-lang="fr">Expérience</h2>
+        <h2 class="section-title" data-lang="en">Experience</h2>
       </div>
       <div class="exp-list">
 
         <div class="exp-item">
-          <div class="exp-dates">Juin – Août 2026</div>
+          <div class="exp-dates">Jun – Aug 2026</div>
           <div>
-            <div class="exp-role">Health Data Analyst — Stage</div>
-            <div class="exp-org">University Hospital of the West Indies — Oncohématologie, Kingston</div>
-            <p class="exp-desc">Audit organisationnel complet incluant analyse parcours patients et modélisation flux soins. Extraction, nettoyage et analyse bases de données hospitalières. Identification goulots opérationnels et points optimisation. Recommandations stratégiques pour amélioration gestion clinique et efficacité processus. Rapports à direction médicale et administrative.</p>
+            <div class="exp-role" data-lang="fr">Health Data Analyst — Stage</div>
+            <div class="exp-role" data-lang="en">Health Data Analyst — Internship</div>
+            <div class="exp-org" data-lang="fr">University Hospital of the West Indies — Clinique d'Oncohématologie, Kingston</div>
+            <div class="exp-org" data-lang="en">University Hospital of the West Indies — Haemato-Oncology Clinic, Kingston</div>
+            <p class="exp-desc" data-lang="fr">Audit organisationnel complet incluant analyse parcours patients et modélisation flux soins. Extraction, nettoyage et analyse bases de données hospitalières. Identification goulots opérationnels et points optimisation. Recommandations stratégiques pour amélioration gestion clinique et efficacité processus. Rapports à direction médicale et administrative.</p>
+            <p class="exp-desc" data-lang="en">Complete organizational audit including patient pathway analysis and care flow modelling. Hospital database extraction, cleaning and analysis. Identification of operational bottlenecks and optimization opportunities. Strategic recommendations for clinical management improvement and process efficiency. Reports delivered to medical and administrative leadership.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <div class="exp-dates">Nov 2025 – Mai 2026</div>
+          <div class="exp-dates">Nov 2025 – May 2026</div>
           <div>
-            <div class="exp-role">Enseignant Stagiaire Sciences Appliquées &amp; Prévention Santé</div>
-            <div class="exp-org">Académie de Lyon — Lycée Jehanne de France</div>
-            <p class="exp-desc">Stage d'enseignement semi-autonome. PSE et filières sanitaires (Bac Pro ASSP). Microbiologie appliquée, physiopathologie, hygiène hospitalière. Vulgarisation scientifique et conception supports didactiques. Gestion classe avec différenciation pédagogique. Évaluation continue et suivi progressions.</p>
+            <div class="exp-role" data-lang="fr">Enseignant Stagiaire Sciences Appliquées &amp; Prévention Santé</div>
+            <div class="exp-role" data-lang="en">Trainee Teacher Applied Sciences &amp; Occupational Health</div>
+            <div class="exp-org" data-lang="fr">Académie de Lyon — Lycée Jehanne de France</div>
+            <div class="exp-org" data-lang="en">Academy of Lyon — Jehanne de France High School</div>
+            <p class="exp-desc" data-lang="fr">Stage 7 mois en autonomie d'enseignement. PSE et filières sanitaires (Bac Pro ASSP). Microbiologie appliquée, physiopathologie, hygiène hospitalière. Vulgarisation scientifique et conception supports didactiques. Gestion classe avec différenciation pédagogique. Évaluation continue et suivi progressions.</p>
+            <p class="exp-desc" data-lang="en">7-month independent teaching placement. Occupational health and care pathways (Vocational Bac). Applied microbiology, pathophysiology, hospital hygiene. Science communication and teaching resource design. Classroom management with pedagogical differentiation. Continuous assessment and progress tracking.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <div class="exp-dates">Nov 2024 – Avr 2025</div>
+          <div class="exp-dates">Nov 2024 – Apr 2025</div>
           <div>
-            <div class="exp-role">Enseignant Stagiaire Observation &amp; Pratique Accompagnée</div>
-            <div class="exp-org">Académie de Lyon — Lycée Hélène Boucher, Vénissieux</div>
-            <p class="exp-desc">Stage en pratique accompagnée. Sciences appliquées et hygiène (CAP APH / Bac Pro HPS). Ingénierie séquences et différenciation pédagogique. Gestion classe et conception supports didactiques.</p>
+            <div class="exp-role" data-lang="fr">Enseignant Stagiaire Observation &amp; Pratique Accompagnée</div>
+            <div class="exp-role" data-lang="en">Trainee Teacher Observation &amp; Supervised Practice</div>
+            <div class="exp-org" data-lang="fr">Académie de Lyon — Lycée Professionnel Hélène Boucher, Vénissieux</div>
+            <div class="exp-org" data-lang="en">Academy of Lyon — Hélène Boucher Vocational High School, Vénissieux</div>
+            <p class="exp-desc" data-lang="fr">Stage 6 mois pratique accompagnée. Sciences appliquées et hygiène (CAP APH / Bac Pro HPS). Ingénierie séquences et différenciation pédagogique. Gestion classe et conception supports didactiques.</p>
+            <p class="exp-desc" data-lang="en">6-month supervised teaching practice. Applied sciences and hygiene (CAP / Vocational Bac). Lesson engineering and pedagogical differentiation. Classroom management and teaching material design.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <div class="exp-dates">Sept 2021 – Avr 2026</div>
+          <div class="exp-dates">Sep 2021 – Apr 2026</div>
           <div>
-            <div class="exp-role">Professeur Contractuel — Assistant d'Anglais</div>
-            <div class="exp-org">France Éducation International — Nîmes &amp; Lyon</div>
-            <p class="exp-desc">Coordination et pilotage programmes anglais pour diverse learners. Conception complète curriculum, création matériels didactiques et ressources interactives. Enseignement en présentiel, gestion classes. Différenciation pédagogique. Collaboration équipes pédagogiques. Posture réflexive et mesure impact pédagogique.</p>
+            <div class="exp-role" data-lang="fr">Professeur Contractuel — Assistant d'Anglais</div>
+            <div class="exp-role" data-lang="en">Contract Teacher — English Assistant</div>
+            <div class="exp-org" data-lang="fr">France Éducation International — Nîmes &amp; Lyon</div>
+            <div class="exp-org" data-lang="en">France Éducation International — Nîmes &amp; Lyon</div>
+            <p class="exp-desc" data-lang="fr">Coordination et pilotage programmes anglais pour diverse learners. Conception complète curriculum, création matériels didactiques et ressources interactives. Enseignement en présentiel, gestion classes. Différenciation pédagogique. Collaboration équipes pédagogiques. Posture réflexive et mesure impact pédagogique.</p>
+            <p class="exp-desc" data-lang="en">Coordination and management of English programmes for diverse learners. Complete curriculum design, creation of teaching materials and interactive resources. In-person instruction, classroom management. Pedagogical differentiation. Collaboration with teaching teams. Reflective practice and measuring pedagogical impact.</p>
           </div>
         </div>
 
@@ -706,15 +893,19 @@
     <!-- ENGAGEMENT ASSOCIATIF -->
     <section class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Engagement Citoyen &amp; Bénévolat</h2>
+        <h2 class="section-title" data-lang="fr">Engagement Citoyen &amp; Bénévolat</h2>
+        <h2 class="section-title" data-lang="en">Civic Engagement &amp; Volunteering</h2>
       </div>
       <div class="exp-list">
         <div class="exp-item">
           <div class="exp-dates">2025 – 2026</div>
           <div>
-            <div class="exp-role">Bénévole — Mentorat &amp; Accompagnement Éducatif</div>
-            <div class="exp-org">Afev (Fondation Étudiante pour la Ville) — Lyon</div>
-            <p class="exp-desc">Accompagnement individualisé hebdomadaire : soutien méthodologique, renforcement autonomie apprentissages et médiation culturelle. Compétences d'écoute active, pédagogie bienveillante, adaptabilité relationnelle et engagement réduction inégalités éducatives.</p>
+            <div class="exp-role" data-lang="fr">Bénévole — Mentorat &amp; Accompagnement Éducatif</div>
+            <div class="exp-role" data-lang="en">Volunteer — Mentoring &amp; Educational Support</div>
+            <div class="exp-org" data-lang="fr">Afev (Fondation Étudiante pour la Ville) — Lyon</div>
+            <div class="exp-org" data-lang="en">Afev (Student Foundation for the City) — Lyon</div>
+            <p class="exp-desc" data-lang="fr">Accompagnement individualisé hebdomadaire : soutien méthodologique, renforcement autonomie apprentissages et médiation culturelle. Compétences d'écoute active, pédagogie bienveillante, adaptabilité relationnelle et engagement réduction inégalités éducatives.</p>
+            <p class="exp-desc" data-lang="en">Weekly individual mentoring: methodological support, learning autonomy strengthening and cultural mediation. Active listening, compassionate pedagogy, relational adaptability and commitment to reducing educational inequality.</p>
           </div>
         </div>
       </div>
@@ -723,21 +914,24 @@
     <!-- LANGUES -->
     <section class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Langues</h2>
+        <h2 class="section-title" data-lang="fr">Langues</h2>
+        <h2 class="section-title" data-lang="en">Languages</h2>
       </div>
       <div class="lang-row">
         <div class="lang-card">
           <span class="lang-flag">🇯🇲</span>
           <div>
-            <div class="lang-name">Anglais</div>
-            <div class="lang-level-text">Langue maternelle</div>
+            <div class="lang-name">English</div>
+            <div class="lang-level-text" data-lang="fr">Langue maternelle</div>
+            <div class="lang-level-text" data-lang="en">Native language</div>
           </div>
         </div>
         <div class="lang-card">
           <span class="lang-flag">🇫🇷</span>
           <div>
             <div class="lang-name">Français</div>
-            <div class="lang-level-text">Niveau B2/C1 — DELF Certifié</div>
+            <div class="lang-level-text" data-lang="fr">Niveau B2/C1 — DELF Certifié</div>
+            <div class="lang-level-text" data-lang="en">B2/C1 — DELF Certified</div>
           </div>
         </div>
       </div>
@@ -746,38 +940,47 @@
     <!-- CONTACT -->
     <section id="contact" class="fade-in">
       <div class="section-header">
-        <h2 class="section-title">Contact &amp; Opportunités</h2>
+        <h2 class="section-title" data-lang="fr">Contact &amp; Opportunités</h2>
+        <h2 class="section-title" data-lang="en">Contact &amp; Opportunities</h2>
       </div>
-      <p class="contact-intro">
+      <p class="contact-intro" data-lang="fr">
         Disponible pour un stage alterné à partir du 1er octobre 2026 ou un stage à temps plein d'avril à septembre 2027. Ouvert à la signature d'un contrat CDD ou CDI à l'issue du stage. Mobilité géographique possible.
+      </p>
+      <p class="contact-intro" data-lang="en">
+        Available for an alternating internship from October 1, 2026 or full-time from April to September 2027. Open to signing a fixed-term or permanent contract following the internship. Geographic mobility possible.
       </p>
       <div class="contact-grid">
         <a href="mailto:aquilawilliams02@gmail.com" class="contact-item">
           <div class="contact-icon">✉</div>
           <div>
-            <div class="contact-label">Email</div>
+            <div class="contact-label" data-lang="fr">Email</div>
+            <div class="contact-label" data-lang="en">Email</div>
             <div class="contact-value">aquilawilliams02@gmail.com</div>
           </div>
         </a>
         <a href="https://www.linkedin.com/in/aquila-williams-3ba07bb3/" target="_blank" class="contact-item">
           <div class="contact-icon">in</div>
           <div>
-            <div class="contact-label">LinkedIn</div>
+            <div class="contact-label" data-lang="fr">LinkedIn</div>
+            <div class="contact-label" data-lang="en">LinkedIn</div>
             <div class="contact-value">Aquila Williams</div>
           </div>
         </a>
         <a href="https://github.com/aquila3D" target="_blank" class="contact-item">
           <div class="contact-icon">⌥</div>
           <div>
-            <div class="contact-label">GitHub</div>
+            <div class="contact-label" data-lang="fr">GitHub</div>
+            <div class="contact-label" data-lang="en">GitHub</div>
             <div class="contact-value">aquila3D</div>
           </div>
         </a>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
           <div>
-            <div class="contact-label">Localisation</div>
-            <div class="contact-value">Lyon / Le Mans — Mobilité possible</div>
+            <div class="contact-label" data-lang="fr">Localisation</div>
+            <div class="contact-label" data-lang="en">Location</div>
+            <div class="contact-value" data-lang="fr">Lyon / Le Mans — Mobilité possible</div>
+            <div class="contact-value" data-lang="en">Lyon / Le Mans — Mobility possible</div>
           </div>
         </div>
       </div>
@@ -786,10 +989,28 @@
   </div>
 
   <footer>
-    <p>Aquila Williams — Économiste de la Santé — 2026</p>
+    <p data-lang="fr">Aquila Williams — Économiste de la Santé — 2026</p>
+    <p data-lang="en">Aquila Williams — Health Economist — 2026</p>
   </footer>
 
   <script>
+    // Language toggle functionality
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem('preferredLanguage', lang);
+      
+      // Update button states
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+
+    // Load saved preference on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('preferredLanguage') || 'fr';
+      setLanguage(saved);
+    });
+
+    // Intersection observer for fade-in animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -797,6 +1018,7 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+    // Project filter functionality
     function filterProjects(category) {
       const cards = document.querySelectorAll('.project-card');
       const buttons = document.querySelectorAll('.filter-btn');
