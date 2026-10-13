@@ -406,14 +406,14 @@
 
       <!-- FILTER BUTTONS -->
       <div class="project-filters">
-        <button class="filter-btn active" onclick="filterProjects('all')" data-lang="fr">Tous les projets (9)</button>
-        <button class="filter-btn active" onclick="filterProjects('all')" data-lang="en">All projects (9)</button>
+        <button class="filter-btn active" onclick="filterProjects('all')" data-lang="fr">Tous les projets (10)</button>
+        <button class="filter-btn active" onclick="filterProjects('all')" data-lang="en">All projects (10)</button>
         <button class="filter-btn" onclick="filterProjects('heor')" data-lang="fr">Modélisation & HTA (4)</button>
         <button class="filter-btn" onclick="filterProjects('heor')" data-lang="en">Modelling & HTA (4)</button>
         <button class="filter-btn" onclick="filterProjects('rwe')" data-lang="fr">Données Réelles & RWE (3)</button>
         <button class="filter-btn" onclick="filterProjects('rwe')" data-lang="en">Real-World Data & RWE (3)</button>
-        <button class="filter-btn" onclick="filterProjects('policy')" data-lang="fr">Économétrie & Politiques (2)</button>
-        <button class="filter-btn" onclick="filterProjects('policy')" data-lang="en">Econometrics & Policy (2)</button>
+        <button class="filter-btn" onclick="filterProjects('policy')" data-lang="fr">Économétrie & Politiques (3)</button>
+        <button class="filter-btn" onclick="filterProjects('policy')" data-lang="en">Econometrics & Policy (3)</button>
       </div>
 
       <div class="projects-grid">
@@ -617,6 +617,37 @@
             <span class="tag-complete" data-lang="en">✓ Completed</span>
             <span class="tag">Audit</span>
             <span class="tag">Queuing</span>
+          </div>
+        </div>
+
+        <!-- MEDECINS GENERALISTES -->
+        <div class="project-card" data-category="policy">
+          <div class="project-top">
+            <div>
+              <div class="project-name" data-lang="fr">Inégalités Territoriales d'Accès aux Médecins Généralistes</div>
+              <div class="project-name" data-lang="en">Territorial Inequalities in Access to General Practitioners</div>
+              <div class="project-year" data-lang="fr">Projet M1, 2026</div>
+              <div class="project-year" data-lang="en">Project M1, 2026</div>
+            </div>
+            <span class="project-lang">R • OLS</span>
+          </div>
+          <p class="project-desc" data-lang="fr">Analyse des disparités départementales de densité de médecins généralistes en France métropolitaine (2021) et de leur lien avec les caractéristiques socio-économiques des territoires, à partir de l'open data DREES et INSEE.</p>
+          <p class="project-desc" data-lang="en">Analysis of departmental disparities in general practitioner density across metropolitan France (2021) and their link to territorial socio-economic characteristics, using DREES and INSEE open data.</p>
+          <div class="project-details" data-lang="fr">
+            <strong>Méthodes :</strong> Cartographie de la densité par département (91 à 268 médecins pour 100 000 hab.), régression linéaire sur le niveau de vie médian, la part des seniors et la densité de population. Densité de population et part des seniors positivement et significativement associées à la densité médicale.
+          </div>
+          <div class="project-details" data-lang="en">
+            <strong>Methods:</strong> Departmental density mapping (91 to 268 GPs per 100,000 inhabitants), linear regression on median standard of living, share of seniors and population density. Population density and share of seniors positively and significantly associated with GP density.
+          </div>
+          <div class="project-tags">
+            <span class="tag-complete" data-lang="fr">✓ Complet</span>
+            <span class="tag-complete" data-lang="en">✓ Complete</span>
+            <span class="tag">Open Data</span>
+            <span class="tag">Mapping</span>
+          </div>
+          <div class="project-links">
+            <a href="BAKHOUM_WILLIAMS_Panorama_donnees_sante.pdf" target="_blank" class="project-link" data-lang="fr">Rapport PDF</a>
+            <a href="BAKHOUM_WILLIAMS_Panorama_donnees_sante.pdf" target="_blank" class="project-link" data-lang="en">PDF Report</a>
           </div>
         </div>
 
@@ -851,12 +882,16 @@
         <div class="edu-item">
           <div class="edu-year">2024 – 2026</div>
           <div>
-            <div class="edu-degree" data-lang="fr">Master MEEF — Biotechnologies Santé Environnement</div>
-            <div class="edu-degree" data-lang="en">Master's MEEF — Biotechnology & Environmental Health</div>
-            <div class="edu-inst" data-lang="fr">Université Claude Bernard Lyon 1</div>
-            <div class="edu-inst" data-lang="en">Claude Bernard Lyon 1 University</div>
-            <div class="edu-detail" data-lang="fr">Sciences Médico-Sociales · Microbiologie Appliquée · Biochimie · PSE · Didactique · Méthodologie Scientifique · Gestion Projets. Qualification : CAP Agent Propreté Hygiène (APH), Bac Pro Hygiène Propreté Stérilisation (HPS), Bac Pro ASSP.</div>
-            <div class="edu-detail" data-lang="en">Medico-Social Sciences · Applied Microbiology · Biochemistry · Occupational Health & Safety · Didactics · Scientific Methodology · Project Management. Qualified to teach: CAP Cleaning and Hygiene Technician, Vocational Baccalaureate in Hygiene & Sterilization, Vocational Baccalaureate in Care Services.</div>
+            <div class="edu-degree" data-lang="fr">Master MEEF — Biotechnologies Santé Environnement (BSE)</div>
+            <div class="edu-degree" data-lang="en">Master's MEEF — Biotechnology, Health & Environment (BSE)</div>
+            <div class="edu-inst" data-lang="fr">Université Claude Bernard Lyon 1 — INSPE de Lyon</div>
+            <div class="edu-inst" data-lang="en">Claude Bernard Lyon 1 University — INSPE Lyon</div>
+            <div class="edu-detail" data-lang="fr">
+              <strong>Enseignements principaux :</strong> Biologie humaine · Immunologie · Métabolisme · Enzymologie · Biochimie structurale · Microbiologie · Biologie cellulaire · Écologie microbienne · Numérique & enseignement en biotechnologies · Éthique & valeurs · Mémoire de recherche & méthodologie · Didactique du champ BSE : nutrition & alimentation · Référentiels & approche des programmes · Pédagogie appliquée & didactique disciplinaire · Animation de TP & gestion de classe · Éducation inclusive · Psychologie de l'adolescent
+            </div>
+            <div class="edu-detail" data-lang="en">
+              <strong>Core courses:</strong> Human biology · Immunology · Metabolism · Enzymology · Structural biochemistry · Microbiology · Cell biology · Microbial ecology · Digital tools in biotechnology teaching · Ethics & values · Research thesis & methodology · Teaching nutrition & food science · Curriculum frameworks & syllabus analysis · Applied pedagogy & subject didactics · Lab session facilitation & classroom management · Inclusive education · Adolescent psychology
+            </div>
           </div>
         </div>
 
@@ -867,8 +902,8 @@
             <div class="edu-degree" data-lang="en">Bachelor's Molecular Biology (Economics Option)</div>
             <div class="edu-inst" data-lang="fr">University of the West Indies, Mona — Kingston</div>
             <div class="edu-inst" data-lang="en">University of the West Indies, Mona — Kingston</div>
-            <div class="edu-detail" data-lang="fr">Biochimie (Bioénergétique, Biochimie Cellulaire) · Biologie Moléculaire · Biotechnologie · Microbiologie · Épidémiologie & Biostatistiques · Chimie · Pratiques Laboratoire · Human Molecular Biology · Microéconomie & Macroéconomie · Mathématiques Sciences Sociales · Méthodologie Recherche</div>
-            <div class="edu-detail" data-lang="en">Biochemistry (Bioenergetics, Cellular Biochemistry) · Molecular Biology · Biotechnology · Microbiology · Epidemiology & Biostatistics · Chemistry · Laboratory Practice · Human Molecular Biology · Micro- & Macroeconomics · Mathematics for Social Sciences · Research Methodology</div>
+            <div class="edu-detail" data-lang="fr"><strong>Enseignements principaux :</strong> Biochimie (Bioénergétique, Biochimie Cellulaire) · Biologie Moléculaire · Biotechnologie · Microbiologie · Épidémiologie & Biostatistiques · Chimie · Pratiques Laboratoire · Human Molecular Biology · Microéconomie & Macroéconomie · Mathématiques Sciences Sociales · Méthodologie Recherche</div>
+            <div class="edu-detail" data-lang="en"><strong>Core courses:</strong> Biochemistry (Bioenergetics, Cellular Biochemistry) · Molecular Biology · Biotechnology · Microbiology · Epidemiology & Biostatistics · Chemistry · Laboratory Practice · Human Molecular Biology · Micro- & Macroeconomics · Mathematics for Social Sciences · Research Methodology</div>
           </div>
         </div>
 
@@ -1041,7 +1076,7 @@
     // Language toggle functionality
     function setLanguage(lang) {
       document.documentElement.lang = lang;
-      localStorage.setItem('preferredLanguage', lang);
+      try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
       
       // Update button states
       document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
@@ -1050,7 +1085,8 @@
 
     // Load saved preference on page load
     window.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('preferredLanguage') || 'fr';
+      let saved = 'fr';
+      try { saved = localStorage.getItem('preferredLanguage') || 'fr'; } catch (e) {}
       setLanguage(saved);
     });
 
